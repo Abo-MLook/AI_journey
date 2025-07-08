@@ -30,8 +30,10 @@ except:
 finally:
     f.close()
 
+print("\n=======================\n")
 #=======================
-# a = Append : create the file if it doesn't exist , used to modify a file of create one
+
+# a = Append : create the file if it doesn't exist , like adding in file
 f = open("names.txt","a")
 f.write("Turky")
 f.close()
@@ -45,3 +47,14 @@ f = open("names.txt","a+") # a+ append and read
 f.write("Sabhan")
 f.seek(0) # go back to the beginning of the file
 print(f.read())
+f.close()
+
+print("\n=======================\n")
+#=======================
+
+# W = Write : used to 'Overwrite'
+f = open("more_names.txt","w+") # a+ write and read
+f.write("I overwrite the whole file noting exist now before there were names")
+f.seek(0)
+print(f.read())
+
