@@ -1,5 +1,5 @@
-#   Tuple = () ordered and unchangeable. Duplicates OK. FASTER
-#   List = [] ordered and changeable. Duplicates OK
+#   Tuple = () ordered and unchangeable. Duplicates OK. FASTER, can not add anything
+#   List = [] ordered and changeable. Duplicates OK ,
 
 game = ("rock" , "rock" ,"paper" , "scissors")
 

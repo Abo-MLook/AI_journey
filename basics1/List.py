@@ -20,8 +20,15 @@ print(seq)
 
 seq2 = [x * x for x in range(1,11)]
 print(seq2)
-seq3 = (x * x for x in range(1,11))
+
+seq3 = [x % 2 != 0 for x in range(1,11)] # wrong it will be Boolean vaules
 print(seq3)
+
+seq4 = [x for x in range(1,11) if x % 2 != 0  ] # create list of odd num to 10 , vaule - loop - condition
+print(seq4)
+
+seq5 = (x * x for x in range(1,11)) # can not add anything because it is a tuple
+print(seq5)
 
 # -------------
 first_game = [x[0] for x in game]
@@ -42,5 +49,5 @@ print(game)
 
 #---
 numbers = [-5,-4,-3,-2,-1,0,1,2,3,4,5]
-positives = [num for num in numbers if num>0]
+positives = [num  for num in numbers   if num > 0]
 print(positives)
