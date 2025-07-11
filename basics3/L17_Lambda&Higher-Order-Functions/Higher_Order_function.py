@@ -19,6 +19,7 @@ print(var2(5))
 #--------------------------------------------------------------------------
 
 numbers = [1,4,2,3,7,8]
+print(f"numbers are : {numbers}\n")
 #-------------------------------------------------------------------------
 
 # map()	  ;       map(func, iterable)	   ;Apply a function to each element
@@ -31,7 +32,10 @@ print(f"using (map) with lambda, sequered are  : {sequerd_numbers}")
 
 # filter()	      filter(func, iterable)	       Keep items where function is (True)
 
-odd_numbers = list(filter(lambda x : x % 2 !=0,numbers))
+#odd_numbers = list(filter(lambda x : x % 2 !=0,numbers))    work ✅
+# or
+is_odd = lambda x: x % 2 != 0
+odd_numbers = list(filter(is_odd,numbers))
 
 print(f"using (filter) with lambda, odds are  : {odd_numbers}")
 #===============================

@@ -13,6 +13,7 @@ add_two = lambda x : x + 2
 print(add_two(4))
 
 
+
 z = lambda a,b : math.sqrt(a**2 + b**2)
 print(z(3,4))
 

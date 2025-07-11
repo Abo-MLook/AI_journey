@@ -18,16 +18,20 @@ if __name__ == "__main__" :
     )
 
     parser.add_argument(
-        "-n",dest="name",metavar="name",
+        "-n","--name",metavar="name",
         required=True , help = "The name of perosn"
     )
 
     parser.add_argument(
         "-l","--lang",metavar="language"
-        ,required= True , choices= ["English", "Spanish", "Geman"]
+        ,required= True , choices= ["English", "Spanish", "German"]
         , help = "The language of the greeting"
     )
 
     args = parser.parse_args()
 
     hello(args.name,args.lang)
+
+
+    # in command line:
+    #  py hello_person.py -n Ali -l English
