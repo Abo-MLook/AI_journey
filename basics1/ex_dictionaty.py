@@ -24,16 +24,16 @@ while True:
         print("you entered a numbered!!")
         continue
 
-    elif not food in menu:
+    elif  food not in menu:
         print("you entered something not in the Menu!!")
         continue
     else:
-        cart[food] = menu[food]
+        cart[food] = menu[food] # Python allows you to add items to a dictionary by setting new keys directly.
         total += cart[food]
 
 
 print()
-print("-------YOU CART------")
+print("\t\t-------YOU CART------")
 for x in cart.keys():
     print(f"{x:20}\t|\t\t${cart[x]}")
 
