@@ -39,13 +39,14 @@ else:
 #           [start : end : step]
 
 number = "1234-567-890"
-print(number[0:4])
-print(number[0:])
-print(number[:11])
-print(number[::2])
-print(number[-4:])
-print(number[::-1])
+print(number[0:4]) # 1234
+print(number[0:]) # whole
+print(number[:11]) # whole except 0
+print(number[::2]) # 1 3 - 6 - 9
+print(number[-4:])  # -890
+print(number[::-1]) # reverse
 
+# Syntax of [start : stop : step]
 
 #entering an email :
 email = input("Enter an email : ")

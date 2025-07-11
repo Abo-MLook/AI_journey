@@ -46,3 +46,8 @@ def print_StudentInfo(**informatinos):
 
 
 print_StudentInfo(id="431107769",name = "MRWAN FAHAD ALAYED",age = 22, GPU = 4.98 , collage = "computer collage")
+
+
+data = {"name": "Ali", "age": 20}
+#print_StudentInfo(data)   # ❌ This gives an error
+print_StudentInfo(**data)  # ✅ Works perfectly
