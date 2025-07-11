@@ -12,7 +12,7 @@ total = 0
 
 print("\t\t------MENU-------")
 for x,y in menu.items():
-    print(f"{x:20}\t|\t\t${y}")
+    print(f"{x:12}\t|\t\t${y}")
 
 print()
 while True:
