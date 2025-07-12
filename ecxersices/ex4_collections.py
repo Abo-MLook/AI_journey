@@ -39,13 +39,3 @@ print("____________________________")
 print(f"\tTOTAL\t\t|\t\t{total:.2f}$")
 
 print("\n\n===========\n")
-# The zip() function in Python combines two or more iterables (like lists or tuples) into pairs (tuples), element by element.
-
-# using zip to create dictionary :
-names = ["Alice", "Bob", "Charlie"]
-ages = [24, 30, 22]
-
-person_dict = zip(names, ages)
-
-person_dict = dict(person_dict)
-print(person_dict)

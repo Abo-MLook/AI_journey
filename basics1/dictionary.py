@@ -24,3 +24,15 @@ print()
 print()
 for key , item in best_food.items():
     print(f"{key} : {item}")
+
+
+# The zip() function in Python combines two or more iterables (like lists or tuples) into pairs (tuples), element by element.
+
+# using zip to create dictionary :
+names = ["Alice", "Bob", "Charlie"]
+ages = [24, 30, 22]
+
+person_dict = zip(names, ages)
+
+person_dict = dict(person_dict)
+print(person_dict)
