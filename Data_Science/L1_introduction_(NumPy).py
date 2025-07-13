@@ -24,7 +24,7 @@ print(f"\nob1 is {ob1.ndim}D array \nob_2d is {ob_2d.ndim}D array")
 
 #========================== Shapes
 
-# getting the shapes       using      .shape
+# getting the shapes       using      .shape       like ob_2d  is  2 x 3
 print(f"\nob1 is {ob1.shape} matrice \nob_2d is {ob_2d.shape} matrice")
 print()
 
@@ -47,6 +47,38 @@ print()
 print(f"ob1 :each elemnt has byte of {ob1.itemsize} and total elements are {ob1.size} , Total bytes as whole is {ob1.itemsize * ob1.size}")
 
 print(f"ob2 :each elemnt has byte of {ob2.itemsize} and total elements are {ob2.size} , Total bytes as whole is {ob2.nbytes}")
+print()
 
 
+#========================== Accessing and Changing elements
+#--Accessing :
+print("Accessing:")
+ob3 = np.array([[1,2,3,4,5,6,7],[8,9,10,11,12,13,14]])
+print(ob3)
+print(f"{ob3[0,1]}")
+print(f"first row : {ob3[0,:]}")
+print(f"theird column : {ob3[:,2]}") # like list and so on ... [start : stop : step] can be used
+
+print(f"row from 2 to 6 : {ob3[0,1:-1:1]}")
+# The first 0 refers to the first row.
+# The second part 1:-1:1 is slicing the columns. so on...
+
+#--Changing :
+print("Changing:")
+ob3[0,0] = 7
+print(ob3)
+ob3[:,2] = [10,3]
+print(ob3)
+print()
+#========================== Accessing and Changing elements for 3D array
+ob_3d = np.array([[[1,2],[3,4]],[[5,6],[7,8]]])
+print(ob_3d)
+print(f"{ob_3d[0,1,1]}") # index is out to in
+print(f"{ob_3d[0,:]}")
+print()
+print(f"{ob_3d[:,:,0]}") # and so on ...
+
+print()
+ob_3d[1,:,:] = [[1,4],[9,16]]
+print(ob_3d)
 
