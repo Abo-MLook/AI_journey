@@ -3,7 +3,7 @@ from logging import exception
 
 
 def show_balance():
-         print(f"You balance now is ${balance}")
+    return f"You balance now is ${balance}"
 
 def withdraw():
     global balance
@@ -52,7 +52,7 @@ while True:
     choice = input("choose : ")
     match choice:
         case "1":
-            show_balance()
+            print(show_balance())
 
         case "2":
             withdraw()
