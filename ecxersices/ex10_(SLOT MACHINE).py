@@ -72,7 +72,7 @@ def playing():
 
             if user_luck[0] == user_luck[1] == user_luck[2]:
                 print_color(f"Wow,{name}, you won  🎉🎉🎉🎉🎉🎊🎊🎊!!!","32")
-                balence += bet
+                balence += bet * 3
             else:
                 print_color(f"Sorry,{name}, you lost !!!","31")
                 balence -= bet
