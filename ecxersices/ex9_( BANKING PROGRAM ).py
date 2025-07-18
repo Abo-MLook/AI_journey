@@ -1,6 +1,6 @@
 import sys
-from logging import exception
-
+class InvalidDepositAmount(Exception):
+    pass
 
 def show_balance():
     return f"You balance now is ${balance}"
@@ -10,8 +10,8 @@ def withdraw():
     try:
         price = float(input("Enter the price you want to withdraw : "))
         if price < 0:
-            print("Enter number more then zero")
-            return
+            raise InvalidDepositAmount("Please enter a number greater than zero.")
+
         if balance < price:
             print(f"your balance is less then you are trying to withdraw\n{show_balance()}")
             return
@@ -21,6 +21,8 @@ def withdraw():
 
     except ValueError:
         print("please enter numbers only")
+    except InvalidDepositAmount as e:
+        print(e)
 
 
 
@@ -29,7 +31,7 @@ def deposit():
     try:
         price = float(input("Enter the price you want to deposit : "))
         if price < 0:
-            raise exception("Enter number more then zero")
+            raise InvalidDepositAmount("Please enter a number greater than zero.")
         balance += price
         print(f"Successfully deposit ${price}\n{show_balance()}")
         return
