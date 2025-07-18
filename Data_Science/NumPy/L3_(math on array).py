@@ -17,7 +17,7 @@ print(b)
 print(a)
 print("copy finish---")
 print()
-#-----
+#----- exit
 
 #========================== math
 
@@ -32,4 +32,8 @@ print(a)
 # and so on ....
 print("math finish---")
 print()
-#-----
+#----- exit
+
+
+#-----🔗 Math Routines Docs: https://numpy.org/doc/stable/reference/routines.math.html
+

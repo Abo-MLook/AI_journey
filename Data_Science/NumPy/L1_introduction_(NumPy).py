@@ -82,3 +82,6 @@ print()
 ob_3d[1,:,:] = [[1,4],[9,16]]
 print(ob_3d)
 
+
+
+# 🔗 Indexing: https://docs.scipy.org/doc/numpy-1.13.0/user/basics.indexing.html

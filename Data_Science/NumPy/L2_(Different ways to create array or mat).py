@@ -60,3 +60,6 @@ print(f"\n{exerciseZ}")
 
 exercise[1:4,1:4] = exerciseZ
 print(f"\n:{exercise}")
+
+
+# 🔗 Array Creation Routines: https://numpy.org/doc/stable/reference/routines.array-creation.html
