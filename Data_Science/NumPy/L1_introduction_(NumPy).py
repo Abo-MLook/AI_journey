@@ -62,7 +62,9 @@ print(f"theird column : {ob3[:,2]}") # like list and so on ... [start : stop : s
 print(f"row from 2 to 6 : {ob3[0,1:-1:1]}")
 # The first 0 refers to the first row.
 # The second part 1:-1:1 is slicing the columns. so on...
-
+print("You can access in this way also")
+oba = np.array([1,2,3,4,5,6])
+print(oba[[0,1,2,5]])  # access on index
 #--Changing :
 print("Changing:")
 ob3[0,0] = 7
