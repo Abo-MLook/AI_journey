@@ -1,7 +1,8 @@
 import random
 import sys
 from random import choice
-
+def print_color(text, color_code):
+    print(f"\033[{color_code}m{text}\033[0m")
 
 class Invalid_bet(Exception):
     pass
@@ -22,7 +23,7 @@ def getBet(balence):
 def complate():
     while True:
         try:
-            user_dis = input("do you want to play (Y/N)")
+            user_dis = input("do you want to play (Y/N) : ")
             if user_dis.lower() == "y" or user_dis.lower() == "n" :
                 return user_dis
 
@@ -43,8 +44,7 @@ def playing():
     machine = {"1": "🍒",
                "2": "🍉",
                "3": "🍋",
-               "4": "🔔",
-               "5": "⭐", }
+               "4": "⭐", }
     balence = 100
 
     def start():
@@ -72,10 +72,10 @@ def playing():
             print("*********")
 
             if user_luck[0] == user_luck[1] == user_luck[2]:
-                print(f"Wow,{name}, you won !!!")
+                print_color(f"Wow,{name}, you won  🎉🎉🎉🎉🎉🎊🎊🎊!!!","32")
                 balence += bet
             else:
-                print(f"Sorry,{name}, you lost !!!")
+                print_color(f"Sorry,{name}, you lost !!!","31")
                 balence -= bet
 
             choice = complate()
