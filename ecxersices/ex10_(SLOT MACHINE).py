@@ -11,8 +11,8 @@ def getBet(balence):
     while True:
         try:
             bet = int(input("Enter your bet amount as a number : "))
-            if bet > balence:
-                raise Invalid_bet("The bet is more then you have")
+            if bet > balence or bet <= 0:
+                raise Invalid_bet("The bet is more then you have or less then 0")
             return bet
         except ValueError:
             print("Enter number please !!")
@@ -62,10 +62,10 @@ def playing():
                 user_luck.append((random.choice(list(machine.keys()))))
 
 
-
+            print("Result:")
             print("*********")
-            for x in user_luck:
-                print(f"{machine.get(x)}",end=" | ")
+            print(" | ".join(machine.get(x) for x in user_luck))
+
 
             print()
             print("*********")
