@@ -3,6 +3,7 @@ import numpy as np
 # -------------------------------------========= Matrices
 
 #=====  mult
+print("mult : ")
 a = np.ones((2,3))
 print(a)
 
@@ -15,6 +16,7 @@ print()
 #----
 
 #=====  Find the determinant
+print("determinant : ")
 
 d = np.identity(3)
 print(d)
@@ -23,6 +25,8 @@ print()
 #----
 
 #=====  Transposed
+print("Transposed : ")
+
 mat = np.array([[1, 2, 3], [4, 5, 6]])
 print(mat)
 print(mat.T)
@@ -30,6 +34,8 @@ print()
 #----
 
 #=====  inverse
+print("inverse : ")
+
 mat = np.array([[1, 2, 3], [4, 5, 6],[1, 8, 9]])
 print(mat)
 print(f"The inverse is :\n{np.linalg.inv(mat)}")
