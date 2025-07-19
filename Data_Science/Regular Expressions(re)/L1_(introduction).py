@@ -42,32 +42,35 @@ for match in matchs:
     print(match)
 
 print(text_to_search[1:4])
-#============================
-pattern = re.compile(r'\\')  # we are looking to (.) without \ before it will be an issue
+print()
+#-------------------------------------------------------------exit
+
+#============================================================================ other example
+pattern = re.compile(r'\\')  # we are looking to (.) without \ before it will be an issue, it will give all chars
 matchs = pattern.finditer(text_to_search)
 for match in matchs:
     print(match)
 
 
+print()
+#-------------------------------------------------------------exit
+
+#============================================================================ using ways to search , from snippets.txt
+# chick snippets.txt
+# I want to search  mr. name
+pattern = re.compile(r'\w\w\w*\.\s\w+') # and so on from the symbols from file......
+matchs = pattern.finditer(text_to_search)
+for match in matchs:
+    print(match)
 
 
+pattern = re.compile(r'\d+-\d+-\d+') # and so on from the symbols from file......
+matchs = pattern.finditer(text_to_search)
+for match in matchs:
+    print(match)
 
 
+print()
+#-------------------------------------------------------------exit
 
 
-
-
-
-
-# example1 :
-#text = "My email is example@example.com"
-#pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b'
-#match = re.search(pattern, text)
-#if match:
-#    print(f"Found email: {match.group()}")
-
-
-#example 2 :
-#text = "There are 3 apples and 5 bananas."
-#result = re.sub(r'\d+', 'number', text)  # Replaces all numbers with "number"
-#print(result)  # Output: There are number apples and number bananas.

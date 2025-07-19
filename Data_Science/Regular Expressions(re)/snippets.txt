@@ -7,9 +7,9 @@
 \s      - Whitespace (space, tab, newline)
 \S      - Not Whitespace (space, tab, newline)
 
-\b      - Word Boundary
+\b      - Word Boundary   // mean start at begin
 \B      - Not a Word Boundary
-^       - Beginning of a String
+^       - Beginning of a String  // mean start at begin of whole string
 $       - End of a String
 
 []      - Matches Characters in brackets
