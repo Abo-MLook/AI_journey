@@ -68,7 +68,11 @@ pattern = re.compile(r'\d+-\d+-\d+') # and so on from the symbols from file.....
 matchs = pattern.finditer(text_to_search)
 for match in matchs:
     print(match)
-
+    print()
+pattern = re.compile(r'\d\d\d.\d\d\d.\d\d\d\d') # and so on from the symbols from file......
+matchs = pattern.finditer(text_to_search)
+for match in matchs:
+    print(match)
 
 print()
 #-------------------------------------------------------------exit
