@@ -13,7 +13,7 @@ for match in matches:
     print(match)
 print()
 #-------------------------------------------------------------exit
-# ======================================================================= matching first email
+# ======================================================================= matching second email
 pattern = re.compile(r'[a-z]+.[a-z]+@[a-z]+\.edu')
 matches = pattern.finditer(emails)
 
@@ -21,7 +21,7 @@ for match in matches:
     print(match)
 print()
 #-------------------------------------------------------------exit
-# ======================================================================= matching first email
+# ======================================================================= matching third email
 pattern = re.compile(r'[a-z]+-\d+-[a-z]+@[a-z]+-[a-z]+\.net')
 matches = pattern.finditer(emails)
 
@@ -30,7 +30,7 @@ for match in matches:
 print()
 #-------------------------------------------------------------exit
 
-# ======================================================================= matching first email
+# ======================================================================= matching first two emails
 pattern = re.compile(r'[a-zA-Z.]+@[a-z]+\.(com|edu)')
 matches = pattern.finditer(emails)
 
@@ -39,7 +39,7 @@ for match in matches:
 print()
 #-------------------------------------------------------------exit
 
-# ======================================================================= matching first email
+# ======================================================================= matching all emails
 pattern = re.compile(r'[a-zA-Z\d.\-]+@[a-z\-]+\.(com|edu|net)')
 matches = pattern.finditer(emails)
 
