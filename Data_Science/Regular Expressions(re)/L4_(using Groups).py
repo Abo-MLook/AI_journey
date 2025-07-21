@@ -8,6 +8,7 @@ https://www.nasa.gov
 '''
 
 # ======================================================================= matching all urls
+print("matching all urls:")
 pattern = re.compile(r'https?://(www\.)?\w+.\w+')
 matches = pattern.finditer(urls)
 
@@ -17,7 +18,7 @@ print()
 #-------------------------------------------------------------exit
 
 # ======================================================================= match using group
-
+print("match using group:")
 pattern = re.compile(r'https?://(www\.)?(\w+)(\.\w+)') # divide it to groups using ( )
 # group(0) =  whole email (https?://(www\.)?(\w+)(\.\w+))
 # group(1) =  (www\.)
@@ -33,6 +34,7 @@ print()
 #-------------------------------------------------------------exit
 
 # ======================================================================= match using substituting
+print("match using substituting:")
 pattern = re.compile(r'https?://(www\.)?(\w+)(\.\w+)') # divide it to groups using ( )
 sub_urls = pattern.sub(r'\2\3',urls)  # take from pattern that searched in ulrs data,
 # then replace the group 2 and 3 inside this var
