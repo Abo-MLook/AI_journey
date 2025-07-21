@@ -7,10 +7,12 @@ https://youtube.com
 https://www.nasa.gov
 '''
 
-pattern = re.compile(r'')
-
-
+pattern = re.compile(r'https?://(www\.)?\w+.\w+')
 matches = pattern.finditer(urls)
 
 for match in matches:
-     print(match.group(3))
+     print(match)
+
+
+
+
