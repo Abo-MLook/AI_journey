@@ -1,6 +1,6 @@
 import  random
 from logging import exception
-
+#using function,exception,list and indexing
 class valied_guess(Exception):
     pass
 
