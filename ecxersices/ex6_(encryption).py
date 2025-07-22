@@ -1,7 +1,7 @@
 import string
 import random
 from operator import index
-
+# good for College projects
 chars = " " + string.punctuation +  string.ascii_letters + string.digits
 chars = list(chars)
 print(chars)
