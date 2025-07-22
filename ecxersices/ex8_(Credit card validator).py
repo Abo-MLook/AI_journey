@@ -8,6 +8,7 @@
 # 4. Sum the totals of steps 2 & 3
 # 5. If sum is divisible by 10, the credit card # is valid
 
+# replace fun and using list
 while True:
     card_num = input("Enter the credit card numbers with - or spaces between every fourd digits please , or q to exit : ")
     if card_num.lower() == "q":
