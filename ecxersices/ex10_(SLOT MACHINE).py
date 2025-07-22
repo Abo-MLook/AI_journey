@@ -1,6 +1,8 @@
 import random
 import sys
 from random import choice
+#using function,exception,list,dictionary, join method and indexing
+
 def print_color(text, color_code):
     print(f"\033[{color_code}m{text}\033[0m")
 
