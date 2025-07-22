@@ -1,5 +1,5 @@
 import random
-
+# ex on dictinoary and list
 dice_art = {
     1: ("┌─────────┐",
         "│         │",
