@@ -1,4 +1,5 @@
 import sys
+# using function and exceptions
 class InvalidDepositAmount(Exception):
     pass
 

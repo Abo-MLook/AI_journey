@@ -1,11 +1,10 @@
 import  random
 from logging import exception
 
-
 class valied_guess(Exception):
     pass
 
-words = ("apple", "apple", "apple", "apple")
+words = ("apple", "orange", "banana", "caravan")
 
 
 
