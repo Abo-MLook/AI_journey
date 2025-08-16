@@ -7,7 +7,7 @@ width = int(input("Enter the width of length of square : "))
 area = width * width
 Perimeter = width * 4
 
-print(f"area is :{area}\nlength is : {Perimeter}")
+print(f"area is :{area}\nPerimeter is : {Perimeter}")
 """
 
 # prog2----------------
@@ -33,4 +33,4 @@ print(f"The circumference is : {round(circumference,2)}\nThe area is : {round(ar
 a = float(input("Enter  a : "))
 b = float(input("Enter  b : "))
 c = M.sqrt(a**2 + b**2)
-print(f"c is : {round(c,2)}")
+print(f"c is : {c:.2f}")

@@ -7,6 +7,7 @@ print(game[0])
 print(game[::-1])
 
 
+
 for x in game:
     print(x,end="  < -  ")
 
