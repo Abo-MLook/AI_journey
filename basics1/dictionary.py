@@ -31,7 +31,7 @@ for key , item in best_food.items():
 names = ["Alice", "Bob", "Charlie"]
 ages = [24, 30, 22]
 
-person_dict = zip(names, ages)
-
-person_dict = dict(person_dict)
+person_dict = list(zip(names, ages)) # [("Alice", 24), ("Bob", 30), ("Charlie", 22)] zip to list
 print(person_dict)
+person_dict = dict(person_dict) # {"Alice": 24, "Bob": 30, "Charlie": 22} zip to dictionary
+print(dict(person_dict))
