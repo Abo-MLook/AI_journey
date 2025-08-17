@@ -7,7 +7,7 @@
 # 3- The outer function returns the inner function.
 
 def parent_function(person_name,coin = 3):
-    # coin = 3
+    #coin = 3
 
     def child_function(): # has access on elements in parent
         nonlocal coin

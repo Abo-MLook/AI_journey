@@ -10,10 +10,7 @@ def rps():
 
     def play_rps():
         # to access them
-        nonlocal game_count
-        nonlocal player_wins
-        nonlocal python_wins
-        nonlocal player_draws
+
 
 
         class RPS(Enum):
@@ -60,6 +57,7 @@ def rps():
 
         game_result = winner(player,computer) # used nested function
         print(game_result)
+        nonlocal game_count
         game_count += 1
         print("\nPlay again?")
 
