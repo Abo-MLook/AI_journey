@@ -7,6 +7,15 @@ def counter(num = 1):
 counter()
 print()
 
+
+def count(num=10):
+    if num ==0:
+        return
+
+    count(num - 1)
+    print(num,end=" ")
+count()
+print()
 # recursive function to print 1 to 10 inversely parameter should start from 1
 
 def Incounter(num =1):
