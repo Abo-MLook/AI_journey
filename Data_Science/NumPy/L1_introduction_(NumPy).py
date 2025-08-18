@@ -75,12 +75,17 @@ print()
 #========================== Accessing and Changing elements for 3D array
 ob_3d = np.array([[[1,2],[3,4]],[[5,6],[7,8]]])
 print(ob_3d)
-print(f"{ob_3d[0,1,1]}") # index is out to in
-print(f"{ob_3d[0,:]}")
-print()
-print(f"{ob_3d[:,:,0]}") # and so on ...
+print("---")
 
-print()
+print(f"{ob_3d[0,1,1]}") # index is out to in
+print("---")
+
+print(f"{ob_3d[0,:]}")
+print("---")
+
+print(f"{ob_3d[:,:,0]}") # and so on ...
+print("---")
+
 ob_3d[1,:,:] = [[1,4],[9,16]]
 print(ob_3d)
 
