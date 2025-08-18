@@ -35,3 +35,4 @@ if __name__ == "__main__" :
 
     # in command line:
     #  py hello_person.py -n Ali -l English
+    # py hello_person.py -h  for help

@@ -43,7 +43,7 @@ print(f"using (filter) with lambda, odds are  : {odd_numbers}")
 # reduce() 	reduce(func, iterable)	Combine elements into one result
 from functools import reduce
 
-total = reduce(lambda acc , current : acc + current,numbers)
+total = reduce(lambda x , current : x + current,numbers)
 
 print(f"using (reduce) with lambda, total are  : {total}")
 
@@ -52,7 +52,7 @@ print(f"using sum built in function : {sum(numbers)}")
 
 #-:-:
 names = ["Mrwan Alayed","Salah Aladeeme","Bassam Albleehi"]
-counting_letters = reduce(lambda acc , current : acc + len(current),names, 0 ) # because it is string we must add 0 at starting
+counting_letters = reduce(lambda x , current : x + len(current),names, 0 ) # because it is string we must add 0 at starting
 
 print(f"using (reduce) with lambda, total letters are   : {counting_letters}")
 
@@ -62,6 +62,6 @@ print(f"using (reduce) with lambda, total letters are   : {counting_letters}")
 words = ["apple", "banana", "kiwi", "cherry"]
 sorted_words = sorted(words, key = lambda word: len(word))
 
-print(f"using (sorted) with lambda, sorted words are   : {counting_letters}")
+print(f"using (sorted) with lambda, sorted words are   : {sorted_words}")
 
 #==============================================================
