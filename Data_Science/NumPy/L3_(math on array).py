@@ -12,7 +12,7 @@ print(a) # changed because b was pointing to a   (pointer)
 
 a = np.array([1,2,3])
 b = a.copy() # this is real coping not pointing
-b[0] = 99
+b[0] = 11
 print(b)
 print(a)
 print("copy finish---")

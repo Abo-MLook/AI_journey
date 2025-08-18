@@ -3,6 +3,7 @@ import numpy as np
 
 zeroM = np.zeros((2,3),"int32")
 print(zeroM)
+print()
 
 onesM = np.ones((zeroM.shape),"float16")
 print(onesM)
