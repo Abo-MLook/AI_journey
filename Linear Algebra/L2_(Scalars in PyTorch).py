@@ -1,7 +1,7 @@
 import torch
 # Scalars in PyTorch
 # PyTorch tensors are designed to be pythonic, i.e., to feel and behave like NumPy arrays
-# The advantage of PyTorch tensors relative to NumPy arrays is that they easily be used for operations on GPU
+# The advantage of PyTorch tensors relative to NumPy arrays is that they easily be used for operations on GPU and ML
 # more on : https://docs.pytorch.org/docs/stable/tensors.html
 
 x = 25
