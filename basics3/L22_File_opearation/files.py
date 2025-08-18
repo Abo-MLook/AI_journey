@@ -55,7 +55,7 @@ print("\n=======================\n")
 #=======================
 
 # W = Write : used to 'Overwrite'
-f = open("more_names.txt","w+") # a+ write and read
+f = open("more_names.txt","w+") # w+ write and read
 f.write("I overwrite the whole file noting exist now before there were names") # delete the before text and add this one
 f.seek(0)
 print(f.read())
