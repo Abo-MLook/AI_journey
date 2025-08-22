@@ -1,5 +1,4 @@
 import math as M
-
 # prog1----------------
 
 print(M.pow(4,2))

@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-
 t = np.linspace(0, 40, 1000) # start, finish, n points
 
 d_r = 2.5 * t
