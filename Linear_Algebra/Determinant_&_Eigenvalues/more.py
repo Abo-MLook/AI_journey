@@ -15,6 +15,8 @@ plt.xlim(-1, 3)
 _ = plt.ylim(-1, 3)
 plt.show()
 
+#======================================================
+# det = 0  ,, No Volume
 B = np.array([[1, 0], [0, 1]])
 N = np.array([[-4, 1], [-8, 2]])
 detN = np.linalg.det(N)
@@ -32,3 +34,23 @@ lambdas, V = np.linalg.eig(N)
 print(f"EigenValues : \n{lambdas}")
 # Aha! If any one of a matrix's eigenvalues is zero, then the product of the eigenvalues must
 # be zero and the determinant must also be zero.
+
+print()
+print()
+
+#======================================================
+# det = 1  ,,  Volume same
+I = np.identity(2)
+print(f"det I2 = {np.linalg.det(I)}")
+lambdas, V = np.linalg.eig(I)
+print(f"EigenValues I2 : \n{lambdas}")
+
+IB = np.dot(I, B)
+print()
+print(IB)
+plot_vectors([vectorfy(B, 0), vectorfy(B, 1), vectorfy(IB, 0), vectorfy(IB, 1)],
+            ['lightblue', 'lightgreen', 'blue', 'green'])
+plt.xlim(-1, 3)
+_ = plt.ylim(-1, 3)
+plt.show()
+
