@@ -19,7 +19,7 @@ print()
 print()
 
 Av = np.dot(A,v1) # Av
-print(np.dot(A,v1))
+print(Av)
 
 print()
 
