@@ -12,7 +12,7 @@ print(V)
 print()
 print(lambdas)
 
-#Let's confirm that ( Av = λv ) for the first eigenvector:
+# Let's confirm that (Av = λv) for the first eigenvector:
 v1 = V[:,0]
 lambdas1 = lambdas[0]
 print()
