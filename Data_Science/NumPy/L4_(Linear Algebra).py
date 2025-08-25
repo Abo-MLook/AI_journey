@@ -42,4 +42,4 @@ print(f"The inverse is :\n{np.linalg.inv(mat)}")
 print()
 #----
 
-# more  🔗 Linear Algebra Docs: https://numpy.org/doc/stable/reference/routines.linalg.html
+# more  🔗 Linear_Algebra Docs: https://numpy.org/doc/stable/reference/routines.linalg.html
