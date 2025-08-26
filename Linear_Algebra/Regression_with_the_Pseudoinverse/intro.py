@@ -21,3 +21,31 @@ plt.xlabel(xlabel)
 plt.ylabel(ylabel)
 _ = ax.scatter(x1, y)
 plt.show()
+
+
+x0 = np.ones(8)
+
+X = np.concatenate((np.matrix(x0).T, np.matrix(x1).T), axis=1)
+
+w = np.dot(np.linalg.pinv(X), y)
+
+b = np.asarray(w).reshape(-1)[0]
+
+m = np.asarray(w).reshape(-1)[1]
+
+
+fig, ax = plt.subplots()
+
+plt.title(title)
+plt.xlabel(xlabel)
+plt.ylabel(ylabel)
+
+ax.scatter(x1, y)
+
+x_min, x_max = ax.get_xlim()
+y_at_xmin = m*x_min + b
+y_at_xmax = m*x_max + b
+
+ax.set_xlim([x_min, x_max])
+_ = ax.plot([x_min, x_max], [y_at_xmin, y_at_xmax], c='C01')
+plt.show()
