@@ -13,7 +13,7 @@ _ = plt.imshow(imggray)
 plt.show()
 
 
-
+# convert it to numpy to deal with it appropriately
 imgmat = np.array(list(imggray.getdata(band=0)), float)
 imgmat.shape = (imggray.size[1], imggray.size[0])
 imgmat = np.matrix(imgmat)
