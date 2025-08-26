@@ -20,7 +20,7 @@ imgmat = np.matrix(imgmat)
 _ = plt.imshow(imgmat, cmap='gray')
 plt.show()
 
-
+# calculate the SVD of image
 U, sigma, V = np.linalg.svd(imgmat)
 reconstimg = np.matrix(U[:, :1]) * np.diag(sigma[:1]) * np.matrix(V[:1, :])
 _ = plt.imshow(reconstimg, cmap='gray')
