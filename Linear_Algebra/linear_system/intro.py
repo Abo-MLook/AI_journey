@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 from Linear_Algebra.ploting.intro import plot_lines
 
 
@@ -67,5 +66,9 @@ plot_lines(A_2_system)
 # 4 - System of Linear Equations with an Infinite Number of Solutions
 b_3 = np.array([7, -21], dtype=np.dtype(float))
 A_3_system = np.hstack((A_2, b_3.reshape((2, 1))))
+try:
+    x_2 = np.linalg.solve(A_2, b_3)
+except np.linalg.LinAlgError as err:
+    print(err)
 print(A_3_system)
 plot_lines(A_3_system)
