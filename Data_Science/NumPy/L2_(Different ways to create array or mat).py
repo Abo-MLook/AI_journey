@@ -33,7 +33,11 @@ mat1 = np.array([[1,2,3]])
 mat2 = np.repeat(mat1,3,axis=0)
 print(f"mat repeated : \n{mat2}")
 print()
-
+#-------------
+# Create an array that starts from the integer 1, ends at 20, incremented by 3.
+mat = np.arange(1,5)
+print(mat)
+print()
 #-------------
 #exercise :
 #1  1  1  1  1
