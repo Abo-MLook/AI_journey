@@ -1,7 +1,7 @@
 import random
 import time
 from tabulate import tabulate
-
+#dwfaasdf
 data = []
 for i in range(5):
     sensor_id = f"S{random.randint(100,999)}" # id for sensor
