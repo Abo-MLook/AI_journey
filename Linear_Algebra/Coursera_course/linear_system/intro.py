@@ -1,5 +1,5 @@
 import numpy as np
-from Linear_Algebra.ploting.intro import plot_lines
+from Linear_Algebra.Coursera_course.ploting.intro import plot_lines
 
 
 
