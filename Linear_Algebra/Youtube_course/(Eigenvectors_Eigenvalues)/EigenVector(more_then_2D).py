@@ -1,6 +1,4 @@
-from Linear_Algebra.Affine_Transformation.L_Affine_Transformation import plot_vectors
 import numpy as np
-import matplotlib.pyplot as plt
 
 # While plotting gets trickier in higher-dimensional spaces, we can nevertheless find and use eigenvectors with more than two dimensions.
 # Here's a 3D example (there are three dimensions handled over three rows):

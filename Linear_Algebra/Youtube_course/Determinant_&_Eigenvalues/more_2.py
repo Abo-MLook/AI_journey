@@ -1,4 +1,4 @@
-from Linear_Algebra.Affine_Transformation.L_Affine_Transformation import plot_vectors
+from Linear_Algebra.Youtube_course.Affine_Transformation.L_Affine_Transformation import plot_vectors
 import numpy as np
 import matplotlib.pyplot as plt
 I = np.identity(2)
