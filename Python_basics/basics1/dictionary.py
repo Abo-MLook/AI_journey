@@ -1,5 +1,4 @@
 
-
 best_food = {"Burger days":"Vaiolit burger",
              "Burger hunsh":"Smoky burger",
                "Calafornia Burger" : "clasic burger",
