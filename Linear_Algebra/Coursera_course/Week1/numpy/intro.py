@@ -9,6 +9,7 @@ a2 = np.array([[3,3],
 print(f'a1:\n{a1}')
 print()
 print(f'a2:\n{a2}')
+print()
 
 
 # Stack the arrays vertically
