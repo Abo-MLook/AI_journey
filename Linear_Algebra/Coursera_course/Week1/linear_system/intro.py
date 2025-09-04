@@ -18,6 +18,7 @@ print(b)
 print(f"Shape of A: {A.shape}")
 print(f"Shape of b: {b.shape}")
 
+# another way
 # print(f"Shape of A: {np.shape(A)}")
 # print(f"Shape of A: {np.shape(b)}")
 
