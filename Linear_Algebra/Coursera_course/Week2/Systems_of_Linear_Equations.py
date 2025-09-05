@@ -35,3 +35,20 @@ print()
 d = np.linalg.det(A)
 
 print(f"Determinant of matrix A: {d:.2f}")
+#========================================================
+
+# 1.4 - What happens if the system has no unique solution?
+A_2= np.array([
+        [1, 1, 1],
+        [0, 1, -3],
+        [2, 1, 5]
+    ], dtype=np.dtype(float))
+
+b_2 = np.array([2, 1, 0], dtype=np.dtype(float))
+# will produce an error because it is singluar det is = 0
+print(np.linalg.solve(A_2, b_2))
+print()
+
+d_2 = np.linalg.det(A_2)
+
+print(f"Determinant of matrix A_2: {d_2:.2f}")
