@@ -1,34 +1,36 @@
 
-menu = {"POPCORN":1.00 ,
+menu = {"POPCORN": 1.00,
         "HOT DOG": 2.00,
-        "GIANT PRETZEL":2.00 ,
-        "ASST CANDY":1.00 ,
-        "SODA":1.00 ,
-        "BOTTLED WATER":1.00 ,}
+        "GIANT PRETZEL": 2.00,
+        "ASST CANDY": 1.00,
+        "SODA": 1.00,
+        "BOTTLED WATER": 1.00, }
 
 prices = []
 cart = {}
 total = 0
 
 print("\t\t------MENU-------")
-for x,y in menu.items():
+for x, y in menu.items():
     print(f"{x:12}\t|\t\t${y}")
 
 print()
 while True:
-    food = input("Select which one to order  (q to exit) : ")
-    if food.lower() =="q":
+    food = input("Select which one to order  (q to exit) : ").upper()
+
+    if food.lower() == "q":
         break
 
     elif food.isdigit():
         print("you entered a numbered!!")
         continue
 
-    elif  food not in menu:
+    elif food not in menu:
         print("you entered something not in the Menu!!")
         continue
     else:
-        cart[food] = menu[food] # Python allows you to add items to a dictionary by setting new keys directly.
+        # Python allows you to add items to a dictionary by setting new keys directly.
+        cart[food] = menu[food]
         total += cart[food]
 
 
