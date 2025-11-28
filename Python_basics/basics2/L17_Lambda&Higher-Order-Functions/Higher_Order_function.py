@@ -8,60 +8,80 @@
 # ➡️ Simplifies complex logic: You can compose small functions into bigger logic.
 # ➡️ Functional programming style: Makes your code more declarative and clean.
 
+from functools import reduce
+
+
 def Funcbuilder(x):
-    return lambda num : num + x
+    return lambda num: num + x
 
-var1 = Funcbuilder(10) # now 10 will be the x value, the lamda returning can be call now and passed then returned final value
-var2= Funcbuilder(20)
 
-print(var1(3)) # calling;  num = 3, x = 10 from before;  return 3 + 10
+# now 10 will be the x value, the lamda returning can be call now and passed then returned final value
+var1 = Funcbuilder(10)
+var2 = Funcbuilder(20)
+
+print(var1(3))  # calling;  num = 3, x = 10 from before;  return 3 + 10
 print(var2(5))
-#--------------------------------------------------------------------------
+# --------------------------------------------------------------------------
 
-numbers = [1,4,2,3,7,8]
+numbers = [1, 4, 2, 3, 7, 8]
 print(f"numbers are : {numbers}\n")
-#-------------------------------------------------------------------------
+# -------------------------------------------------------------------------
+
+
+def squer(x):
+    return x * x
+
 
 # map()	  ;       map(func, iterable)	   ;Apply a function to each element
 
-sequerd_numbers = list(map(lambda x : x * x , numbers))
+
+sequerd_numbers = list(map(lambda x: x * x, numbers))
+sequerd_numbers1 = list(map(squer, numbers))
+
 
 print(f"using (map) with lambda, sequered are  : {sequerd_numbers}")
+print(f"using (map) with function, sequered are  : {sequerd_numbers1}")
 
-#===============================
+# ===============================
 
 # filter()	      filter(func, iterable)	       Keep items where function is (True)
 
-#odd_numbers = list(filter(lambda x : x % 2 !=0,numbers))    work ✅
+# odd_numbers = list(filter(lambda x : x % 2 !=0,numbers))    work ✅
 # or
-is_odd = lambda x: x % 2 != 0
-odd_numbers = list(filter(is_odd,numbers))
+
+
+def is_odd(x): return x % 2 != 0
+
+
+# odd_numbers = list(filter(lambda x : x % 2 !=0,numbers))
+odd_numbers = list(filter(is_odd, numbers))
 
 print(f"using (filter) with lambda, odds are  : {odd_numbers}")
-#===============================
+# ===============================
 
 # reduce() 	reduce(func, iterable)	Combine elements into one result
-from functools import reduce
 
-total = reduce(lambda x , current : x + current,numbers)
+total = reduce(lambda x, current: x + current,
+               numbers, 1)  # make it start at 1
 
 print(f"using (reduce) with lambda, total are  : {total}")
 
 # note reduce can be use for complicit example , for total you can use (sum)
 print(f"using sum built in function : {sum(numbers)}")
 
-#-:-:
-names = ["Mrwan Alayed","Salah Aladeeme","Bassam Albleehi"]
-counting_letters = reduce(lambda x , current : x + len(current),names, 0 ) # because it is string we must add 0 at starting
+# -:-:
+names = ["Mrwan Alayed", "Salah Aladeeme", "Bassam Albleehi"]
+# because it is string we must add 0 at starting
+counting_letters = reduce(lambda x, current: x + len(current), names, 0)
 
 print(f"using (reduce) with lambda, total letters are   : {counting_letters}")
 
-#=======================================================
+# =======================================================
 # sorted()	  Sort based on a function of each item   	key=lambda x: len(x)
 
 words = ["apple", "banana", "kiwi", "cherry"]
-sorted_words = sorted(words, key = lambda word: len(word))
+sorted_words = sorted(words, key=lambda word: len(word))
 
 print(f"using (sorted) with lambda, sorted words are   : {sorted_words}")
 
-#==============================================================
+# ==============================================================
