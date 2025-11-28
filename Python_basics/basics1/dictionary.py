@@ -40,4 +40,4 @@ print(person_List)
 # {"Alice": 24, "Bob": 30, "Charlie": 22} zip to dictionary
 person_dict = dict(zip(names, ages))
 
-print((person_dict))
+print(person_dict)
