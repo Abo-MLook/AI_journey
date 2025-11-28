@@ -1,5 +1,5 @@
 
-print("This is calcalater to sum pos and neg numbers enter E to end ")
+print("This is calculator to sum pos and neg numbers enter E to end ")
 sum = 0
 num = 0
 while True:
@@ -7,7 +7,6 @@ while True:
 
     if num.upper() == "E":
         break
-
 
     try:
         num = float(num)
@@ -17,6 +16,5 @@ while True:
 print(f"The sum is : {sum:.2f}")
 
 
-
-for x in range(1,11):
+for x in range(1, 11):
     print(f"{x}^2 = {x ** 2}", end="\n------- \n")

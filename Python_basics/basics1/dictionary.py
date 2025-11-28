@@ -1,12 +1,14 @@
 
-best_food = {"Burger days":"Vaiolit burger",
-             "Burger hunsh":"Smoky burger",
-               "Calafornia Burger" : "clasic burger",
-                 "Makdonaldez":"Big tasty"}
+best_food = {"Burger days": "Vaiolit burger",
+             "Burger hunsh": "Smoky burger",
+             "Calafornia Burger": "clasic burger",
+             "Makdonaldez": "Big tasty"}
 
-#print(dir(best_food))
-#print(help(best_food))
+# print(dir(best_food))
+# print(help(best_food))
 print("Burger days" in best_food)
+print("Vaiolit burger" in best_food)
+
 print(best_food["Burger days"])
 print(best_food.get("Burger days"))
 
@@ -16,12 +18,14 @@ print(best_food)
 best_food.popitem()
 best_food.pop("Burger days")
 print(best_food)
-
+print()
+print()
+print("--------------------")
 for x in best_food.keys():
     print(f"{x} : {best_food[x]} ")
 print()
 print()
-for key , item in best_food.items():
+for key, item in best_food.items():
     print(f"{key} : {item}")
 
 # The zip() function in Python combines two or more iterables (like lists or tuples) into pairs (tuples), element by element.
@@ -30,7 +34,10 @@ for key , item in best_food.items():
 names = ["Alice", "Bob", "Charlie"]
 ages = [24, 30, 22]
 
-person_dict = list(zip(names, ages)) # [("Alice", 24), ("Bob", 30), ("Charlie", 22)] zip to list
-print(person_dict)
-person_dict = dict(person_dict) # {"Alice": 24, "Bob": 30, "Charlie": 22} zip to dictionary
-print(dict(person_dict))
+# [("Alice", 24), ("Bob", 30), ("Charlie", 22)] zip to list
+person_List = list(zip(names, ages))
+print(person_List)
+# {"Alice": 24, "Bob": 30, "Charlie": 22} zip to dictionary
+person_dict = dict(zip(names, ages))
+
+print((person_dict))
