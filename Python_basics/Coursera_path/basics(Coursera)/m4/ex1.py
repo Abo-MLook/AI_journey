@@ -96,10 +96,13 @@ print(a_scores)
 print()
 p_phrase = "was it a car or a cat I saw"
 p_rev = ""
+p1_rev = p_phrase[::-1]
 
 for char in p_phrase:
     p_rev = char + p_rev
 print(p_rev)
+print(p1_rev)
+
 print(p_phrase ==p_rev)
 
 
