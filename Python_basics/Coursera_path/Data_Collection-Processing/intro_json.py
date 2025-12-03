@@ -28,11 +28,12 @@ print()
 
 
 def pretty(obj):
-    return json.dumps(obj, sort_keys=True, indent=2)
+    return json.dumps(obj, sort_keys=True, indent=2) # take dict and convret it to str with json format
 
 
 d = {'key1': {'c': True, 'a': 90, '5': 50}, 'key2': {'b': 3, 'c': "yes"}}
 
 print(d)
 print('--------')
+print(type(pretty(d)))
 print(pretty(d))
