@@ -2,7 +2,7 @@
 # simple class
 class Person:
     # similar to a constructor (__init__ runs when creating an object)
-    def __init__(self, name=0, age=0, gender=0):
+    def __init__(self, name:str = "name", age=0, gender=0):
         self.name = name
         self.age = age
         self.gender = gender
