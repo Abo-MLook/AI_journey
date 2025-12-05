@@ -1,0 +1,17 @@
+Regex
+In this lecture we're going to talk about pattern matching in strings using regular expressions. Regular expressions, or regexes,
+are written in a condensed formatting language. In general, you can think of a regular expression as a pattern which you give to a regex processor
+with some source data. The processor then parses that source data using that pattern, and returns chunks of text back to the a data scientist or programmer
+for further manipulation. There's really three main reasons you would want to do this - to check whether a pattern exists within some source data,
+to get all instances of a complex pattern from some source data, or to clean your source data using a pattern generally through string splitting.
+ Regexes are not trivial, !! but they are a foundational technique for data cleaning in data science applications, and a solid understanding of regexs
+ will help you quickly and efficiently manipulate text data for further data science application.
+
+Now, you could teach a whole course on regular expressions alone, especially if you wanted to demystify how the regex parsing engine
+works and efficient mechanisms for parsing text. In this lecture I want to give you basic understanding of how regex works - enough knowledge that,
+with a little directed sleuthing, you'll be able to make sense of the regex patterns you see others use, and you can build up your practical knowledge of
+ how to use regexes to improve your data cleaning. By the end of this lecture, you will understand the basics of regular expressions, how to define patterns
+ for matching, how to apply these patterns to strings, and how to use the results of those patterns in data processing.
+
+Finally, a note that in order to best learn regexes you need to write regexes. I encourage you to stop the video at any time and try out new patterns
+or syntax you learn at any time.

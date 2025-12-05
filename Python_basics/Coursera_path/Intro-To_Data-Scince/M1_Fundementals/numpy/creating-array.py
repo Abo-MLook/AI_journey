@@ -50,6 +50,8 @@ print()
 # We can also generate an array with random numbers
 print(np.random.rand(2,3))
 print()
+print(np.random.rand(4))
+print()
 # You'll see zeros, ones, and rand used quite often to create example arrays, especially in stack overflow
 # posts and other forums.
 
