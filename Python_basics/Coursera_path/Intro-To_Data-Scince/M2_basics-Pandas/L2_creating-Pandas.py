@@ -56,8 +56,16 @@ students_scores = {'Alice': 'Physics',
 s = pd.Series(students_scores, index=['Alice', 'Molly', 'Sam'])
 print(s)
 print()
-
-
-
 # The result is that the Series object doesn't have Jack in it, even though he was in our
 # original dataset, but it explicitly does have Sam in it as a missing value.
+
+
+
+ste = {
+"ID" : 1127846804,
+"Name" : "Mrwan ALayed",
+"Section":"CS",
+"Level" : "8"
+}
+s = pd.Series(ste,index=["ID","Name","Section","Level","GPA"])
+print(s)
