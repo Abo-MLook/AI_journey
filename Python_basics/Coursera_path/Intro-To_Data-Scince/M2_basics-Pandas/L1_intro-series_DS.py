@@ -107,3 +107,5 @@ print()
 
 print(np.isnan(np.nan))
 print()
+# So keep in mind when you see NaN, it's meaning is similar to None, but it's a
+# numeric value and treated differently for efficiency reasons.
