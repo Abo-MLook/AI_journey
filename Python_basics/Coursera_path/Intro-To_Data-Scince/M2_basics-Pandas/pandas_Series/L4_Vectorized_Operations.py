@@ -135,3 +135,24 @@ broad_time = timeit.timeit(broadcasting,number=100)
 print()
 print(f"iterative approach time :  {itert_time}")
 print(f"broadcasting methods time :  {broad_time}")
+# Amazing. Not only is it significantly faster, but it's more concise and even easier
+# to read too. The typical mathematical operations you would expect are vectorized, and the
+# nump documentation outlines what it takes to create vectorized functions of your own.
+
+
+"""
+This part compares slow looping vs fast vectorized operations in Pandas and NumPy.
+
+Key notes:
+- You can loop through a Series to do calculations, but it is slow.
+- Using built-in functions like sum() is faster than manual loops.
+- Using NumPy functions like np.sum() is MUCH faster than both.
+- timeit is used to measure and compare execution speed.
+- Vectorization means performing operations on all values at once instead of one-by-one.
+- Broadcasting applies an operation to the entire Series instantly (like numbers += 2).
+- Broadcasting is significantly faster and cleaner than using loops.
+- Always prefer:
+  → NumPy functions for calculations
+  → Broadcasting for transforming data
+  → Avoid manual loops unless absolutely necessary
+"""

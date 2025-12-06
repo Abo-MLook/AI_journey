@@ -109,3 +109,17 @@ print(np.isnan(np.nan))
 print()
 # So keep in mind when you see NaN, it's meaning is similar to None, but it's a
 # numeric value and treated differently for efficiency reasons.
+
+
+"""
+This part explains how Pandas Series work. Summary :
+
+Key notes:
+- A Series is a one-dimensional list of data with labels (indexes).
+- Pandas automatically creates indexes if you don’t provide them.
+- Pandas automatically detects the data type (numbers, strings, etc.).
+- If a list contains None and numbers, Pandas converts the column to floats and uses NaN.
+- NaN means missing numeric data and is NOT equal to anything, even itself.
+- You must use np.isnan() to check for NaN, not ==.
+- None and NaN both mean “missing”, but they behave very differently in calculations.
+"""

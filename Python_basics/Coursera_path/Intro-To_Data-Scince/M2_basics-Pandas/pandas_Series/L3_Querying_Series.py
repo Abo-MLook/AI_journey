@@ -66,3 +66,21 @@ print()
 
 # So, that didn't call s.iloc[0] underneath as one might expect, instead it
 # generates an error
+
+
+"""
+This part explains how to access values in a Pandas Series.
+
+Key notes:
+- You can access data in a Series in two main ways:
+  → By position using .iloc (zero-based index)
+  → By label using .loc (actual index name)
+- Using s[ ] is a shortcut:
+  → If you pass a number, Pandas tries to access by position.
+  → If you pass a label, Pandas accesses by index name.
+- This shortcut becomes dangerous when your index itself contains numbers.
+- If the index is numeric, s[0] looks for label 0, NOT the first position.
+- To avoid mistakes and errors, always use:
+  → .iloc for position-based access
+  → .loc for label-based access
+"""

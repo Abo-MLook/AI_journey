@@ -69,3 +69,23 @@ ste = {
 }
 s = pd.Series(ste,index=["ID","Name","Section","Level","GPA"])
 print(s)
+
+
+
+
+
+"""
+This part shows different ways to create a Pandas Series.
+
+Key notes:
+- A Series can be created from a dictionary, where:
+  → Dictionary keys become the index.
+  → Dictionary values become the data.
+- The index of a Series can be accessed using .index.
+- If the data contains mixed or complex types (like tuples), the dtype becomes "object".
+- You can manually set the index when creating a Series using the index parameter.
+- If the provided index does not match the dictionary keys:
+  → Extra dictionary keys are ignored.
+  → Missing index values are filled with NaN.
+- This behavior is useful when you want full control over which labels appear in your data.
+"""
