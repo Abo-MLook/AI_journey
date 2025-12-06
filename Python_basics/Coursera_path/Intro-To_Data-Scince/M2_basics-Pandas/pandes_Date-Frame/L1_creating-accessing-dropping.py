@@ -215,3 +215,42 @@ print()
 df['ClassRanking'] = 1
 print(df)
 print()
+
+
+print("train-----")
+print(df.loc[:,["Class","ClassRanking"]])
+print()
+
+print(df.T["school1"])
+print()
+print(df.T.loc["Name"])
+print()
+print(df)
+print()
+print(df.loc["school1"]["Name"])
+print()
+print(df.loc["school1",["Class","ClassRanking"]])
+print(type(df.loc["school1",["Class","ClassRanking"]]))
+"""
+This part introduces the Pandas DataFrame and how to work with rows and columns.
+
+Key notes:
+- A DataFrame is like a table made of rows (records) and columns (fields).
+- It can be created from:
+  → A list of Series (each Series = one row)
+  → A list of dictionaries (each dict = one row)
+- Use .head() to quickly preview the data.
+- Use .loc for label-based row selection.
+- Use .iloc for position-based row selection.
+- If one row matches, .loc returns a Series.
+- If multiple rows match, .loc returns a DataFrame.
+- Use df['ColumnName'] to select a column (this returns a Series).
+- Avoid heavy chaining like df.loc['school1']['Name'] when modifying data.
+- Use .drop() to remove rows or columns:
+  → By default, it returns a copy.
+  → Use inplace=True to modify the original.
+- Columns can also be deleted using del.
+- New columns can be added instantly using assignment (broadcasting values).
+
+This section focuses on selecting, projecting, deleting, and adding data in a DataFrame.
+"""
