@@ -47,3 +47,32 @@ print(df.head(10))
 print()
 # Note that the inplace attribute causes pandas to fill the values inline and does not return a copy of the
 # dataframe, but instead modifies the dataframe you have.
+
+
+"""
+This code demonstrates how to handle missing data in pandas, which is common during data cleaning. Key points:
+
+- **Types of Missing Data**:
+  - **Missing at Random (MAR)**: Missing data is related to other variables (e.g., gender or ethnicity).
+  - **Missing Completely at Random (MCAR)**: Missing data has no relationship with other variables.
+  - Missing data can occur due to various reasons, such as non-response in surveys or data not collected.
+
+- **Identifying Missing Data**:
+  - Missing values in pandas are represented as `None` or `NaN`.
+  - Use `.isnull()` to create a boolean mask indicating missing values in the DataFrame.
+
+- **Handling Missing Data**:
+  - **Dropping Rows with Missing Data**:
+    - `df.dropna()` removes any rows that have missing values.
+    - Example: Dropping rows with missing data results in a smaller DataFrame without the rows that had missing values.
+
+  - **Filling Missing Data**:
+    - `df.fillna(value)` can replace missing data with a specified value, such as `0` in this example.
+    - `inplace=True` modifies the original DataFrame rather than returning a new one.
+
+- **Custom Missing Value Representations**:
+  - Sometimes missing data isn't explicitly marked as `NaN`. For example, `99` might be used to represent missing data in some datasets.
+  - The `na_values` parameter in `read_csv()` allows you to specify custom missing value representations.
+
+These techniques help you clean datasets by identifying, removing, or filling missing values, ensuring your data is ready for analysis.
+"""

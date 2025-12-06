@@ -85,3 +85,30 @@ print()
 # keyword "webpage". How could we accomplish this?
 # Here's my solution, first matching any number of characters then ending in .html
 print(df.replace(to_replace=".*.html$", value="webpage", regex=True).head())
+
+"""
+This code focuses on handling missing data and replacing values in a DataFrame. Key points:
+
+- **Handling Missing Data**:
+  - **na_filter**: The `na_filter` option in `read_csv()` controls whether white spaces are considered as missing values.
+  - **Missing Values as Data**: Sometimes missing values (e.g., in online learning logs) can provide useful information, especially in systems with frequent heartbeat data.
+
+- **Filling Missing Values**:
+  - **Forward Fill (ffill)**: Fills missing values with the previous non-missing value. Example: `df.ffill()` applies this method.
+  - **Backward Fill (bfill)**: Fills missing values with the next valid value. Both methods require the data to be sorted.
+
+- **Sorting Data**:
+  - Use `set_index()` to set a timestamp column as the index and then sort the DataFrame by it with `sort_index()`.
+  - After sorting, we use multi-level indexing (`time` and `user`) to handle non-unique timestamps for multiple users.
+
+- **Replacing Missing Data**:
+  - **Replacing with `replace()`**: You can replace specific values in the DataFrame using:
+    - **Value-to-value**: `df.replace(1, 100)` replaces all `1` values with `100`.
+    - **List approach**: `df.replace([1, 3], [100, 300])` replaces multiple values.
+    - **Regex approach**: `df.replace(to_replace=".*.html$", value="webpage", regex=True)` replaces values matching a regex pattern (e.g., `.html`).
+
+- **Handling Downcasting**:
+  - The `infer_objects()` function automatically downcasts the object type for the filled columns to appropriate types (e.g., from object to integer).
+
+This approach helps efficiently handle missing data, apply custom replacements, and manage data cleanliness, especially when dealing with logs or time-series data.
+"""

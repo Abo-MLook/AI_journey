@@ -112,3 +112,31 @@ print()
 
 print(df.loc[ [('Michigan', 'Washtenaw County'), ('Michigan', 'Wayne County')] ])
 print()
+
+"""
+This part explains how to set and reset the index, as well as how to work with multi-level indexing. Key notes:
+
+- `set_index()` replaces the DataFrame’s current index with a specified column.
+  → Remember, it’s destructive, so preserve the current index by copying it into a new column first.
+  → Example: `df['Serial Number'] = df.index`
+
+- `reset_index()` removes the current index and reverts to the default integer index, promoting the old index to a column.
+
+- **Multi-level Indexing**:
+  → Create hierarchical indices by passing a list of columns to `set_index()`.
+  → Example: `df.set_index(['STNAME', 'CTYNAME'])` creates a two-level index (state and county).
+
+- Querying Multi-Level Index:
+  → Use `.loc[]` to access data by multi-level index.
+  → Example: `df.loc['Michigan', 'Washtenaw County']` retrieves specific county data.
+
+- Filtering:
+  → Filter rows based on conditions (e.g., `SUMLEV == 50` for county-level data).
+  → You can project only the relevant columns using a list of column names.
+
+- **Practical Use**:
+  → Multi-level indexing is useful when dealing with complex datasets like census data where rows are grouped by multiple categories.
+  → Example: `df.loc[('Michigan', 'Washtenaw County')]` to retrieve data for a specific county in a state.
+
+This is a critical technique for organizing and querying structured data efficiently in pandas.
+"""
