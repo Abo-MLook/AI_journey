@@ -50,18 +50,21 @@ print()
 # we're recording this
 
 import timeit
+
 def loop_mean():
     total = 0
     for number in numbers:
         total += number
     return total / len(numbers)
 
-def numpy_mean():
-    total = np.sum(numbers)
-    return total / len(numbers)
 def pybuiltin():
     total = sum(numbers)
     return total / len(numbers)
+
+def numpy_mean():
+    total = np.sum(numbers)
+    return total / len(numbers)
+
 # Run each 100 times (like -n 100)
 loop_time = timeit.timeit(loop_mean, number=100)
 numpy_time = timeit.timeit(numpy_mean, number=100)
@@ -70,3 +73,65 @@ pybul_time = timeit.timeit(pybuiltin, number=100)
 print("Loop version:", loop_time)
 print("Python built in version:", pybul_time)
 print("NumPy version:", numpy_time)
+print()
+print()
+# Wow! This is a pretty shocking difference in the speed and demonstrates why one should be
+# aware of parallel computing features and start thinking in functional programming terms.
+# Put more simply, vectorization is the ability for a computer to execute multiple instructions
+# at once, and with high performance chips, especially graphics cards, you can get dramatic
+# speedups. Modern graphics cards can run thousands of instructions in parallel.
+
+
+
+# A Related feature in pandas and nummy is called broadcasting. With broadcasting, you can
+# apply an operation to every value in the series, changing the series. For instance, if we
+# wanted to increase every random variable by 2, we could do so quickly using the += operator
+# directly on the Series object.
+
+# Let's look at the head of our series
+print(numbers.head())
+print()
+
+numbers += 2
+print(numbers.head())
+print()
+
+# The procedural way of doing this would be to iterate through all of the items in the
+# series and increase the values directly. Pandas does support iterating through a series
+# much like a dictionary, allowing you to unpack values easily.
+
+# We can use the iteritems() function which returns a label and value
+for label , value in numbers.items():
+    # in the early version of pandas we would use the set_value() function
+    # in the current version, we use the iat() or at() functions,
+    numbers.at[label] = value + 2
+
+print(numbers.head())
+
+# Lets take a look at some speed comparisons.
+
+
+
+# First, lets try five loops using the iterative approach
+numbers = pd.Series(np.random.randint(0,1000,1000))
+def iterative():
+    global numbers
+    for label , val in numbers.items():
+        numbers.at[label] = val+2
+    return numbers
+
+itert_time = timeit.timeit(iterative,number=100)
+
+
+# Now lets try that using the broadcasting methods
+numbers = pd.Series(np.random.randint(0,1000,1000))
+def broadcasting():
+    global numbers
+    numbers +=2
+    return numbers
+
+broad_time = timeit.timeit(broadcasting,number=100)
+
+print()
+print(f"iterative approach time :  {itert_time}")
+print(f"broadcasting methods time :  {broad_time}")
