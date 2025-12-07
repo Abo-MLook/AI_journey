@@ -28,7 +28,7 @@ student_df = pd.DataFrame([{'Name': 'James', 'School': 'Business',
 # Name
 
 print(pd.merge(staff_df, student_df, how='left', on='Name'))
-print()
+print("")
 # From the output, we can see there are columns Location_x and Location_y. Location_x refers to the Location
 # column in the left dataframe, which is staff dataframe and Location_y refers to the Location column in the
 # right dataframe, which is student dataframe.
