@@ -31,3 +31,11 @@ store_counts = df.groupby('Store').size()
 print("\nNumber of Entries by Store:")
 print(store_counts)
 print()
+
+print(df)
+print()
+for item , group in df.groupby('Store'):
+    print(group)
+print()
+for item , group in df.groupby('Store'):
+    print(item)
