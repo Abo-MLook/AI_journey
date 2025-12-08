@@ -13,6 +13,10 @@ print()
 
 unstacked = stacked.unstack()
 print(unstacked)
+print()
+print(unstacked.unstack())
+print()
+print(unstacked.unstack().unstack())
 
 
 """

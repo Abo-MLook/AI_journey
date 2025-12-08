@@ -7,7 +7,8 @@ df = df[df['SUMLEV']==50] # I'll use the overloaded indexing operator [] which d
 df.set_index(['STNAME','CTYNAME'], inplace=True)
 # Set the column names
 df.rename(columns={'ESTIMATESBASE2010': 'Estimates Base 2010'})
-
+print(df.head())
+print()
 # Here's another pandas idiom. Python has a wonderful function called map, which is sort of a basis for
 # functional programming in the language. When you want to use map in Python, you pass it some function you
 # want called, and some iterable, like a list, that you want the function to be applied to. The results are

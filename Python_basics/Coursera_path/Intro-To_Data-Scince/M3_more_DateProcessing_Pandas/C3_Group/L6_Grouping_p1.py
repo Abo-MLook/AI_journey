@@ -54,12 +54,13 @@ def set_batch_number(item):
 for group, frame in df.groupby(set_batch_number):
     print('There are ' + str(len(frame)) + ' records in group ' + str(group) + ' for processing.')
 print()
+print()
 
 # Let's take one more look at an example of how we might group data. In this example, I want to use a dataset
 # of housing from airbnb. In this dataset there are two columns of interest, one is the cancellation_policy
 # and the other is the review_scores_value.
 df=pd.read_csv("listings.csv")
-df.head()
+print(df.head())
 print()
 
 # So, how would I group by both of these columns? A first approach might be to promote them to a multiindex

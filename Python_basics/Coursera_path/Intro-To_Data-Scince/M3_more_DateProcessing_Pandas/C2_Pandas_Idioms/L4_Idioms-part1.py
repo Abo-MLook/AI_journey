@@ -3,10 +3,13 @@ import pandas as pd
 import numpy as np
 # And we'll bring in some timing functionality too, from the timeit module
 import timeit
-
+pd.set_option('display.max_columns', None)
+pd.set_option('display.width', None)
 # And lets look at some census data from the US
 df = pd.read_csv('census.csv')
 print(df.head())
+print()
+print()
 
 # The first of the pandas idioms I would like to talk about is called method chaining. The general idea behind
 # method chaining is that every method on an object returns a reference to that object. The beauty of this is
@@ -20,6 +23,9 @@ print((df.where(df['SUMLEV']==50)
     .dropna()
     .set_index(['STNAME','CTYNAME'])
     .rename(columns={'ESTIMATESBASE2010': 'Estimates Base 2010'})).head())
+print()
+print()
+
 
 # Lets walk through this. First, we use the where() function on the dataframe and pass in a boolean mask which
 # is only true for those rows where the SUMLEV is equal to 50. This indicates in our source data that the data
@@ -41,6 +47,8 @@ df.set_index(['STNAME','CTYNAME'], inplace=True)
 # Set the column names
 df.rename(columns={'ESTIMATESBASE2010': 'Estimates Base 2010'})
 print(df.head())
+print()
+print()
 
 # As you can see, the second approach is much faster! So, this is a particular example of a classic time
 # readability trade off.

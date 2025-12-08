@@ -42,11 +42,6 @@ print()
 print(df.index.weekday)
 print()
 
-print(df.index.weekday)
-print()
-
-print(df.index.weekday)
-print()
 
 # Suppose we want to know what the mean count is for each month in our DataFrame. We can do this using
 # resample. Converting from a higher frequency from a lower frequency is called downsampling

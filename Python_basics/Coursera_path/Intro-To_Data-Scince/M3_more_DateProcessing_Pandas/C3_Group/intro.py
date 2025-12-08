@@ -19,12 +19,7 @@ grouped = df.groupby('Store')['Sales'].sum()
 print("\nTotal Sales by Store:")
 print(grouped)
 print()
-# Grouping by 'Store' and calculating the sum of sales for each store
-grouped = df.groupby('Store')['Sales'].sum()
 
-print("\nTotal Sales by Store:")
-print(grouped)
-print()
 # Grouping by 'Store' and counting the number of entries (rows) for each store
 store_counts = df.groupby('Store').size()
 

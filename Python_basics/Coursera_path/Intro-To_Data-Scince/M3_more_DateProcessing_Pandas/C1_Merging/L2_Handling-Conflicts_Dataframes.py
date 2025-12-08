@@ -14,6 +14,12 @@ student_df = pd.DataFrame([{'Name': 'James', 'School': 'Business',
                            {'Name': 'Sally', 'School': 'Engineering',
                             'Location': '512 Wilson Crescent'}])
 
+print(staff_df)
+print()
+print(student_df)
+print()
+print()
+
 # In the staff DataFrame, this is an office location where we can find the staff person. And we can see the
 # Director of HR is on State Street, while the two students are on Washington Avenue, and these locations just
 # happen to be right outside my window as I film this. But for the student DataFrame, the location information

@@ -19,6 +19,7 @@ student_df = student_df.set_index('Name')
 print(staff_df.head())
 print()
 print(student_df.head())
+print()
 # There's some overlap in these DataFrames in that James and Sally are both students and staff, but Mike and
 # Kelly are not. Importantly, both DataFrames are indexed along the value we want to merge them on, which is
 # called Name.
