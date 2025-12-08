@@ -72,3 +72,37 @@ print()
 
 print(df.loc['2016'])
 print()
+
+
+"""
+This code explores practical datetime operations in pandas, including date generation, 
+resampling, and indexing.
+
+Creating DatetimeIndex with `date_range`:
+- `pd.date_range(start, periods, freq)` generates evenly spaced timestamps.
+- Examples:
+    • Biweekly on Sundays: freq='2W-SUN'
+    • Business days: freq='B'
+    • Quarterly starting in June: freq='QS-JUN'
+
+Datetime-indexed DataFrame:
+- A DataFrame is built with dates as the index and random cumulative data.
+- Attributes like `df.index.weekday` show properties of each timestamp.
+
+Resampling:
+- Converts data to a new time frequency (downsampling or upsampling).
+- Example:
+      df.resample('ME').mean()
+  computes the average for each month-end.
+
+Datetime Indexing & Slicing:
+- Pandas allows partial string indexing:
+      df.loc['2017']       → all rows from 2017  
+      df.loc['2016-12']    → all rows from December 2016  
+      df.loc['2016-12':]   → from December 2016 onward  
+      df.loc['2016']       → all rows from 2016
+
+Summary:
+`date_range` creates time series grids, `resample` aggregates by new frequencies, and 
+datetime indexing enables intuitive, readable filtering of time-series data.
+"""

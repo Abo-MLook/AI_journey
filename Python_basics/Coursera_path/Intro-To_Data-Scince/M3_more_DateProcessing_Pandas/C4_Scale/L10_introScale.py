@@ -38,3 +38,31 @@ print()
 print(grades[grades>"C"])
 # We see that the operator works as we would expect. We can then use a certain set of mathematical operators,
 # like minimum, maximum, etc., on the ordinal data.
+
+
+"""
+This code demonstrates how to use pandas categorical data types—especially *ordered* 
+categories—to work with graded or ranked values.
+
+Key ideas:
+
+- A DataFrame of letter grades is created, and the 'Grades' column is initially of type 
+  object (string).
+
+- Converting to a categorical type:
+      df["Grades"].astype("category")
+  makes pandas store the values efficiently but does not yet give them an order.
+
+- To define a meaningful order (D < C- < C < ... < A+), a `CategoricalDtype` is created 
+  with an explicit category list and `ordered=True`.
+
+- Converting with:
+      grades = df["Grades"].astype(my_categories)
+  allows comparisons such as `grades > "C"` to behave correctly based on grade ranking.
+
+- Ordered categorical types also support operations like min, max, and sorting according 
+  to the defined order.
+
+Overall, ordered categoricals provide a powerful way to handle ranked qualitative data 
+such as grades, satisfaction levels, or survey responses.
+"""

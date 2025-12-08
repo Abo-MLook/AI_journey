@@ -49,3 +49,40 @@ print(df.head())
 # pandas. And so, I think being able to read and understand the syntax is really worth your time. But keep in
 # mind that following what appears to be stylistic idioms might have performance issues that you need to
 # consider as well.
+
+
+"""
+This code demonstrates a core pandas idiom called *method chaining*, compares it with a 
+more traditional step-by-step approach, and highlights the trade-offs between readability 
+and performance.
+
+Dataset:
+- Reads U.S. census data from `census.csv`.
+
+Method Chaining (the “pandorable” style):
+- A sequence of DataFrame operations is performed in one continuous expression:
+    df.where(df['SUMLEV'] == 50)      → keeps only county-level rows; others become NaN  
+    .dropna()                         → removes the NaN rows produced by where()  
+    .set_index(['STNAME','CTYNAME'])  → creates a multi-index: state → county  
+    .rename({...})                    → renames a column for clarity  
+- Each method returns a modified DataFrame, allowing the next method to attach directly.
+- The resulting chain is compact and expressive, reflecting intent rather than mechanics.
+
+Traditional Step-by-Step Approach:
+- Filtering with df[df['SUMLEV'] == 50] directly drops non-matching rows.  
+- `set_index(..., inplace=True)` modifies the DataFrame in place.  
+- `rename()` is called separately.  
+- This style is often easier for beginners to follow but loses the fluency of the chained style.
+
+Performance Note:
+- In this example, the step-by-step approach runs significantly faster.  
+  Chaining improves readability and reduces boilerplate, but it may introduce 
+  intermediate objects that slow execution.
+
+Conceptual Takeaways:
+- Method chaining leverages pandas’ design: each method returns a DataFrame.  
+- It encourages a clean, linear transformation pipeline.  
+- Developers should balance readability with execution time, especially for large datasets.  
+- Understanding chained expressions is essential when reading real-world pandas code 
+  found in documentation, tutorials, and community solutions.
+"""

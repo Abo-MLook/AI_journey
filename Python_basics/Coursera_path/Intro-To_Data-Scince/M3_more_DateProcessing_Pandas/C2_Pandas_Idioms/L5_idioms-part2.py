@@ -110,3 +110,27 @@ def get_state_region(x):
 # column and pass the customized function into the apply function
 df['state_region'] = df['STNAME'].apply(lambda x: get_state_region(x))
 print(df[['STNAME','state_region']].head())
+
+"""
+This code demonstrates how to use pandas `apply()` to perform row-wise computations, 
+create new columns, and apply custom logic to a DataFrame.
+
+Key ideas:
+
+- After loading and filtering the census data, several yearly population estimate 
+  columns are used to compute row-level min/max values.  
+    df.apply(min_max, axis='columns')
+
+- `apply()` passes each row to a function when `axis='columns'`, allowing flexible 
+  operations such as inserting new fields (`min`, `max`) back into the row.
+
+- Lambdas provide concise inline transformations:  
+    df.apply(lambda x: np.max(x[rows]), axis=1)
+
+- A custom function (`get_state_region`) classifies states into regions, and `apply()` 
+  is used to map state names into a new categorical column:
+    df['state_region'] = df['STNAME'].apply(lambda x: get_state_region(x))
+
+Overall, `apply()` is a versatile pandas tool for custom row/column operations, 
+numeric transformations, and feature creation.
+"""

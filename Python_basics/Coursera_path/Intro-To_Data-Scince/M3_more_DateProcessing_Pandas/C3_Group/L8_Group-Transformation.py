@@ -31,3 +31,32 @@ print()
 df['mean_diff']=np.absolute(df['review_scores_value']-df['mean_review_scores'])
 print(df['mean_diff'].head())
 print()
+
+
+"""
+This code demonstrates *group-wise transformation* using `groupby().transform()`, 
+which differs from aggregation by preserving the original DataFrame’s shape.
+
+Key ideas:
+
+- A subset of columns is selected: ['cancellation_policy', 'review_scores_value'].
+
+- `transform(np.nanmean)` computes the mean review score *within each cancellation 
+  policy group*, but returns a Series/DataFrame with the **same index** as the original.
+    transform_df = df[cols].groupby('cancellation_policy').transform(np.nanmean)
+
+- Because the shape and index are preserved, the transformed values can be merged 
+  back into the original DataFrame as new columns.
+
+- The transformed column is renamed to 'mean_review_scores' before merging.
+
+- Once the per-group mean is available for every row, additional row-level 
+  calculations become easy—for example, the deviation of each listing’s rating 
+  from its group mean:
+    df['mean_diff'] = |review_scores_value − mean_review_scores|
+
+Summary:
+`transform()` applies a function per group but returns results aligned with the 
+original rows, making it ideal for feature engineering such as computing 
+normalized values, group deviations, z-scores, or percent differences.
+"""

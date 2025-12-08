@@ -88,3 +88,37 @@ for group, frame in df.groupby(by=grouping_fun):
 
 print()
 print(df.head())
+
+
+
+"""
+This code illustrates how to use `groupby()` in pandas with columns, functions, and 
+multi-indexes to segment data flexibly.
+
+Key ideas:
+
+- After loading U.S. census data and filtering to county-level rows, grouping by `STNAME` 
+  allows operations per state. Iterating through `df.groupby('STNAME')` yields:
+      (group_name, frame)
+  where `frame` is the subset of counties for that state. Example operation:
+      avg = np.average(frame['CENSUS2010POP'])
+
+- `groupby()` can take a *function* instead of a column. After setting the index to 
+  `STNAME`, a function `set_batch_number()` assigns each state to a batch (0, 1, or 2) 
+  based on its first letter.  
+  Pandas groups rows according to the function’s return value.
+
+- Multi-level grouping example (Airbnb dataset):
+      df = df.set_index(["cancellation_policy", "review_scores_value"])
+  Grouping by index levels uses:
+      df.groupby(level=(0,1))
+
+- Custom grouping with functions also works on multi-indexes. For example, separating 
+  review_scores_value into “10.0” vs “not 10.0” creates custom, meaningful categories 
+  while still preserving the cancellation_policy grouping.
+
+Summary:
+`groupby()` is highly flexible—group by one or many columns, by index levels, or by any 
+function that maps rows (or their index) into categories. This makes it ideal for 
+segmentation, feature engineering, and batch processing tasks.
+"""

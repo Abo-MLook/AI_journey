@@ -60,3 +60,39 @@ student_df = student_df.reset_index()
 
 # Now lets merge using the on parameter
 print(pd.merge(staff_df, student_df, how='right', on='Name'))
+
+
+"""
+This code demonstrates how to combine datasets in pandas using the `merge()` function. 
+It shows different join types, how indexes affect merging, and how to merge on columns 
+when needed.
+
+Key concepts:
+
+- Preparing DataFrames:
+  - Two DataFrames (`staff_df` and `student_df`) are created and indexed by the `Name` column. 
+    This index becomes the key used for merging.
+
+- Merging with Different Join Types:
+  - **Outer Join** (`how='outer'`): Produces the union of both DataFrames. 
+    Everyone appears in the result; unmatched fields become missing values.
+      pd.merge(staff_df, student_df, how='outer', left_index=True, right_index=True)
+
+  - **Inner Join** (`how='inner'`): Produces the intersection. 
+    Only names present in *both* DataFrames are included.
+
+  - **Left Join** (`how='left'`): Returns all rows from the left DataFrame (`staff_df`). 
+    If a staff member is also a student, the student info is included.
+
+  - **Right Join** (`how='right'`): Returns all rows from the right DataFrame (`student_df`). 
+    Student details appear whether or not they are staff.
+
+- Joining on Columns Instead of Index:
+  - Resetting the index with `reset_index()` converts the index back to a normal column.
+  - After that, merges can be done using the `on` parameter:
+      pd.merge(staff_df, student_df, how='right', on='Name')
+
+This pattern is foundational in data wrangling: merging tables by shared identifiers, 
+choosing the appropriate join type, and deciding whether indexes or columns should 
+serve as the merge keys.
+"""

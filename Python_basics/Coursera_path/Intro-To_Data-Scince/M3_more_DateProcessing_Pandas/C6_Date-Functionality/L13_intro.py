@@ -89,3 +89,33 @@ print()
 # Looking at the type of the ts2.index, we can see that it's PeriodIndex.
 print(type(t2.index))
 print()
+
+"""
+This code introduces pandas' core time-related classes—Timestamp, Period, DatetimeIndex, 
+and PeriodIndex—and demonstrates how they behave.
+
+Timestamp:
+- Represents a single point in time (similar to Python's datetime).
+- Can be created from a string or explicit year/month/day/hour parameters.
+- Provides useful attributes such as `.isoweekday()` and `.second`.
+
+Period:
+- Represents an entire span of time (e.g., a month, a day).
+- The granularity depends on the format provided:
+      pd.Period('1/2016') → monthly period
+      pd.Period('3/5/2016') → daily period
+- Supports intuitive time arithmetic:
+      Period('1/2016') + 5  → June 2016
+      Period('3/5/2016') - 2 → two days earlier
+
+DatetimeIndex:
+- When Timestamps are used as an index (e.g., in a Series), pandas creates a 
+  DatetimeIndex automatically.
+
+PeriodIndex:
+- Similarly, Series indexed with Periods produce a PeriodIndex.
+
+Summary:
+Timestamps mark precise moments; Periods represent time spans. DatetimeIndex and 
+PeriodIndex organize these objects for efficient time-based indexing and analysis in pandas.
+"""

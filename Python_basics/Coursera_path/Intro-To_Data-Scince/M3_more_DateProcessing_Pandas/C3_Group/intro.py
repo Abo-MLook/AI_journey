@@ -39,3 +39,27 @@ for item , group in df.groupby('Store'):
 print()
 for item , group in df.groupby('Store'):
     print(item)
+
+
+"""
+This code demonstrates the basics of grouping data in pandas using `groupby()`.
+
+Key concepts:
+
+- A simple DataFrame is created with store names, sales values, and employee counts.
+
+- `groupby('Store')['Sales'].sum()` groups the rows by store and computes total sales 
+  per store. This produces a Series with aggregated values.
+
+- `groupby('Store').size()` counts how many rows belong to each store—useful for 
+  understanding frequency or record counts.
+
+- Iterating over `df.groupby('Store')` yields each store name and its corresponding 
+  sub-DataFrame, allowing inspection or custom processing:
+      for item, group in df.groupby('Store'):
+          print(item)     # store label
+          print(group)    # rows belonging to that store
+
+Overall, `groupby()` provides powerful data summarization and segmentation, enabling 
+aggregations and per-group operations in a clean, readable way.
+"""

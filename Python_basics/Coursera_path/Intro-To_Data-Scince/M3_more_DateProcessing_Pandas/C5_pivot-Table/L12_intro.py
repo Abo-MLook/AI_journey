@@ -146,3 +146,51 @@ print()
 # We actually end up unstacking all the way to just a single column, so a series object is returned. This
 # column is just a "value", the meaning of which is denoted by the heirarachical index of operation, rank, and
 # country.
+
+
+"""
+This code demonstrates how to:
+
+1) Create categorical rank levels from world rankings  
+2) Summarize data with pivot tables (including multiple agg functions and margins)  
+3) Navigate and reshape multi-index DataFrames using stack/unstack.
+
+Rank Levels:
+- Universities are categorized into four tiers based on `world_rank`:
+    1–100   → First Tier Top University
+    101–200 → Second Tier Top University
+    201–300 → Third Tier Top University
+    >300    → Other Top University
+- Implemented in two ways:
+    - Using `pd.cut()` with numeric bins and labels.
+    - Using a custom function `create_category()` with `apply()`.
+
+Pivot Tables:
+- `pivot_table()` summarizes `score` by:
+    - `index='country'`
+    - `columns='Rank_Level'`
+    - `aggfunc=[np.mean, np.max]` (single or multiple aggregation functions).
+- `margins=True` adds an "All" row and column with overall aggregates.
+
+MultiIndex Columns & Selection:
+- The pivot result has a hierarchical column index:
+    - Level 0: aggregation function (e.g., 'mean', 'amax'/'max')
+    - Level 1: rank levels.
+- You can select:
+    - Average score of First Tier universities per country:
+          new_df['mean']['First Tier Top Unversity']
+- `idxmax()` finds which country has the highest average score in that tier.
+
+Stack / Unstack:
+- `stack()` moves the lowest-level columns (Rank_Level) into an inner row index, 
+  increasing row dimensionality.
+- `unstack()` reverses this, moving an index level back to columns.
+- Repeated unstacking can collapse the table into a Series where meaning is carried 
+  entirely by the hierarchical index (operation, rank level, country).
+
+Overall:
+The example ties together:
+- Categorization (cut/apply),
+- Aggregation and comparison across categories (pivot_table),
+- And reshaping multi-dimensional summaries (stack/unstack).
+"""

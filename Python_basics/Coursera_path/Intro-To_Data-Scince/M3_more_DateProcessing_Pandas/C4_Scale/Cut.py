@@ -18,3 +18,23 @@ labels = ['Young', 'Middle-aged', 'Old']
 df['Age Group'] = pd.cut(df['Age'], bins=bins, labels=labels)
 
 print(df)
+
+
+"""
+This code shows how to categorize continuous numeric data into labeled groups using 
+`pd.cut()`.
+
+How it works:
+
+- Ages are placed into predefined bins:  
+      [0–30], (30–50], (50–100]
+
+- `labels` assigns human-readable names to each interval:
+      'Young', 'Middle-aged', 'Old'
+
+- `pd.cut(df['Age'], bins=bins, labels=labels)` returns a categorical Series where 
+  each age is mapped to its corresponding age group.
+
+The result is a new column, 'Age Group', that classifies each person by age range—useful 
+for grouping, visualization, and analysis.
+"""

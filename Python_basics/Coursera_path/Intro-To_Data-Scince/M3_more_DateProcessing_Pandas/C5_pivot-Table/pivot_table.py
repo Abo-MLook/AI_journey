@@ -79,3 +79,34 @@ print("\nPivot with margins=True:")
 print(pivot_m)
 
 print()
+
+
+"""
+This code demonstrates how to summarize data using `pivot_table()`, a powerful pandas 
+tool for reshaping and aggregating data.
+
+Core idea:
+`pivot_table()` creates a new table where:
+- `index` defines the rows,
+- `columns` defines the columns,
+- `values` is the data to aggregate,
+- `aggfunc` specifies how to summarize (mean, sum, count, etc.).
+
+Examples shown:
+
+1. Student scores by subject:
+      df.pivot_table(values='Score', index='Student', columns='Subject', aggfunc=np.mean)
+   This computes each student's average score in each subject.
+
+2. Class scores by subject:
+   Same structure, but grouped by class instead of student.
+
+3. Using `margins=True`:
+   Adds row and column totals (labeled "All"), giving:
+      - Overall mean per student,
+      - Overall mean per subject,
+      - Grand mean of all scores.
+
+`pivot_table()` is essential for multi-dimensional summaries, making it easy to compare 
+groups and compute aggregated statistics across several categories.
+"""

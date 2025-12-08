@@ -60,3 +60,32 @@ print()
 # Joining dataframes through merging is incredibly common, and you'll need to know how to pull data from
 # different sources, clean it, and join it for analysis. This is a staple not only of pandas, but of database
 # technologies as well.
+
+
+
+"""
+This code explores how pandas handles column conflicts during merges, and how to merge 
+DataFrames using multiple keys when a single column is not enough.
+
+Conflicting Column Names:
+- Both `staff_df` and `student_df` contain a column named `Location`, but the meaning differs:
+  staff → office location, students → home address.
+- When merging on `Name`, pandas keeps both versions of the column by adding suffixes:
+    Location_x → from the left DataFrame (staff)
+    Location_y → from the right DataFrame (students)
+- A left join keeps all staff rows and adds matching student info when available.
+
+Merging on Multiple Columns:
+- When first names can overlap, but last names differ, a single-column merge is ambiguous.
+- Using a list of columns in the `on` parameter enforces matching on multiple keys:
+    pd.merge(..., on=['First Name', 'Last Name'])
+- In the example, "Sally Brooks" matches in both tables, but the two different "James" entries 
+  do not share last names, so an inner join excludes them.
+
+Key ideas demonstrated:
+- Automatic suffixing (_x, _y) for duplicate column names during merges.
+- Left joins preserve all left-side data; student details appear only when matched.
+- Multi-key merges allow precise matching across datasets with overlapping identifiers.
+- Understanding and resolving such conflicts is essential for real-world data wrangling 
+  in both pandas and traditional database systems.
+"""

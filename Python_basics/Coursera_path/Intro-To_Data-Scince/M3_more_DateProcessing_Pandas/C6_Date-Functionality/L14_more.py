@@ -72,3 +72,32 @@ print()
 
 print(pd.Timestamp('9/4/2016') + pd.offsets.MonthEnd())
 print()
+
+
+"""
+This code demonstrates how pandas handles date parsing, time differences, and calendar-aware 
+offsets.
+
+Converting Strings to Datetime:
+- Pandas can convert many date string formats automatically using `pd.to_datetime()`.
+- With `format='mixed'`, it parses multiple formats at once.
+- The argument `dayfirst=True` enforces European-style DD/MM/YY parsing.
+
+Timedelta:
+- Represents a literal difference between two timestamps.
+- Example:
+      Timestamp('9/3/2016') - Timestamp('9/1/2016') → Timedelta of 2 days
+- Timedeltas can also be added to timestamps:
+      Timestamp('9/2/2016 8:10') + Timedelta('12D 3H')
+
+Offset:
+- More sophisticated than Timedelta—follows calendar rules.
+- Examples:
+      offsets.Week() → adds exactly one week
+      offsets.MonthEnd() → jumps to the end of the month for the given timestamp
+
+Summary:
+- `to_datetime()` standardizes messy date strings.
+- `Timedelta` handles exact time differences.
+- `Offset` performs rule-based date adjustments (e.g., business days, month ends).
+"""

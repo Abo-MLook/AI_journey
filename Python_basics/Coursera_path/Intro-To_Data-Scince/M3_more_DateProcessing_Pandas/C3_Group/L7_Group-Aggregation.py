@@ -41,3 +41,40 @@ print(df.groupby("cancellation_policy").agg({
 # function in order on the same column. The results will be in a heirarchical index, but since they are
 # columns they don't show as an index per se. Then we indicated another column and a single function we wanted
 # to run.
+
+
+"""
+This code demonstrates the *aggregation* step in the split–apply–combine pattern using
+`groupby().agg()` in pandas.
+
+Key ideas:
+
+- After loading the Airbnb `listings.csv` data, groups are formed by
+    cancellation_policy
+
+- `agg()` takes a dictionary:
+    - Keys   → column names
+    - Values → aggregation functions (or list/tuple of functions)
+
+  Example (single function, one column):
+      df.groupby("cancellation_policy").agg({"review_scores_value": np.nanmean})
+
+- `np.average` does *not* ignore NaNs, so it returns NaN groups; `np.nanmean`
+  correctly skips missing values.
+
+- Multiple functions / columns:
+      df.groupby("cancellation_policy").agg({
+          "review_scores_value": (np.nanmean, np.nanstd),
+          "reviews_per_month":   np.nanmean
+      })
+  or with string function names:
+      df.groupby("cancellation_policy").agg({
+          "review_scores_value": ["mean", "std"],
+          "reviews_per_month":   "mean"
+      })
+
+- Result: one row per group, with a (potentially hierarchical) column index for
+  each aggregated statistic.
+
+This is the classic *aggregation of group data* step in pandas’ groupby workflow.
+"""
