@@ -1,6 +1,5 @@
 # Let's bring in pandas and numpy as usual
 import pandas as pd
-import numpy as np
 
 # Pandas has four main time related classes. Timestamp, DatetimeIndex, Period, and PeriodIndex. First, let's
 # look at Timestamp. It represents a single timestamp and associates values with points in time.
