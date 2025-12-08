@@ -69,3 +69,35 @@ print()
 # argument isn't the difference between two numbers, but the total number of items you want to generate
 print(np.linspace( 0, 2, 15 )) # 15 numbers from 0 (inclusive) to 2 (inclusive)
 print()
+
+
+
+"""
+This code introduces core NumPy array concepts—creation, shape, data types, and 
+utility functions for generating numeric sequences.
+
+Array Basics:
+- `np.array()` creates 1D or multi-dimensional arrays from lists.
+- Attributes:
+      ndim   → number of dimensions  
+      shape  → array size along each dimension  
+      dtype  → underlying data type (NumPy enforces homogeneity)
+
+Data Type Behavior:
+- Mixed numeric types are automatically upcast (e.g., int → float) to avoid precision loss.
+
+Pre-filled Arrays:
+- `np.zeros((2,3))` → 2×3 array of zeros  
+- `np.ones((2,3))`  → 2×3 array of ones  
+- `np.random.rand(...)` → random floats in [0,1), useful for examples and quick tests.
+
+Numeric Sequences:
+- `np.arange(start, stop, step)` creates evenly spaced sequences, ideal for integer ranges.
+  Example: every even number from 10 to 50.
+- `np.linspace(start, stop, num)` generates a fixed number of evenly spaced points, 
+  including endpoints—suited for float sequences.
+
+Summary:
+NumPy arrays provide efficient, homogeneous, multi-dimensional data structures and 
+convenient tools for generating structured numeric data.
+"""
