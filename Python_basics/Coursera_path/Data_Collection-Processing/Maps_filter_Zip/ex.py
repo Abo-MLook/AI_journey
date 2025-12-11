@@ -103,3 +103,8 @@ species = ['golden retriever', 'white tailed deer', 'black rhino', 'brown squirr
 population = [10000, 90000, 1000, 2000000, 500000, 500, 1200, 8000, 12000, 2300, 7500, 100, 1800, 9500, 125000]
 pop_info = list(zip(species,population))
 endangered = list(filter(lambda x: x[1]<2500,pop_info))
+
+l1 = ['left', 'up', 'front']
+l2 = ['right', 'down', 'back']
+
+opposites = list(filter(lambda x:  len(x[0])>3 and len(x[1])>3,list(zip(l1,l2))))

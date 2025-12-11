@@ -36,3 +36,36 @@ print(re.findall("[\w ]*\[edit\]",wiki))
 for title in re.findall("[\w ]*\[edit\]",wiki):
     # Now we will take that intermediate result and split on the square bracket [ just taking the first result
     print(re.split("[\[]",title)[0])
+
+    """
+    This code shows how to iteratively refine a regular expression to extract section 
+    headers from a Wikipedia article, using metacharacters and quantifiers.
+
+    Initial Attempt:
+    - The wiki text contains headers like:
+          Introduction [edit]
+    - The pattern `"[a-zA-Z]{1,100}\[edit\]"` only captures the *final word* before “[edit]”.
+
+    Using Metacharacters:
+    - `\w` matches letters, digits, and underscore → broader than `[a-zA-Z]`.
+    - Updated pattern: `[\w]{1,100}\[edit\]` still captures only one word.
+
+    Using Quantifiers:
+    - `*` means “0 or more repetitions”, so:
+          "[\\w]*\\[edit\\]"
+      matches any contiguous string of word characters before “[edit]”.
+
+    Including Spaces:
+    - Adding a space to the character class:
+          "[\\w ]*\\[edit\\]"
+      lets us capture full multi-word headings.
+
+    Extracting Clean Titles:
+    - For each match like "Section Title [edit]", splitting on "[" and taking the first 
+      part extracts just the title.
+
+    Summary:
+    By progressively expanding the regex using metacharacters (`\w`, `\s`), character 
+    classes, and quantifiers (`*`), we can flexibly capture structured patterns such as 
+    Wikipedia section headers.
+    """

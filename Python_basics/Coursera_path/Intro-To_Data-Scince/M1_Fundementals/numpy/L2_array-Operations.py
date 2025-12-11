@@ -107,3 +107,37 @@ print()
 # with a dimension of 3X5
 b = np.arange(1,16,1).reshape(3,5)
 print(b)
+
+"""
+This code demonstrates core NumPy array operations, including elementwise math, boolean 
+filtering, matrix multiplication, type upcasting, and aggregation.
+
+Elementwise Arithmetic:
+- Operations like `a - b`, `a * b`, and scalar formulas apply to each element.
+- Example: converting Fahrenheit to Celsius using a vectorized formula.
+
+Boolean Arrays:
+- Comparisons return arrays of True/False values.
+- Useful for filtering, masking, and conditional logic.
+
+Matrix Operations:
+- `A * B` → elementwise multiplication  
+- `A @ B` or `A.dot(B)` → true matrix product  
+- Matrix multiplication requires aligned inner dimensions, and `.shape` reveals this.
+
+Type Upcasting:
+- When combining arrays of different dtypes (e.g., int + float), NumPy promotes 
+  values to the more general type (float64 in the example).
+
+Aggregation Functions:
+- Built-in methods include `.sum()`, `.max()`, `.min()`, `.mean()`.
+- For multi-dimensional arrays, functions operate across the entire array unless 
+  an axis is specified.
+
+Example:
+- `np.arange(...).reshape(3,5)` creates a structured 3×5 array for exploration.
+
+Overall:
+NumPy enables fast numerical operations, vectorized math, rich matrix capabilities, 
+and flexible aggregation tools—forming the foundation for scientific computing in Python.
+"""

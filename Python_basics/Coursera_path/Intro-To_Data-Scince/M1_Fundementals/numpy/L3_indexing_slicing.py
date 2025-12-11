@@ -79,3 +79,43 @@ print("sub array index [0,0] value before change:", sub_array[0,0])
 sub_array[0,0] = 50
 print("sub array index [0,0] value after change:", sub_array[0,0])
 print("original array index [0,1] value after change:", a[0,1])
+
+
+"""
+This code demonstrates three essential NumPy indexing techniques—integer indexing, 
+boolean indexing, and slicing—along with an important concept about array views.
+
+Integer Indexing:
+- Single index for 1D arrays works like lists.
+- For 2D arrays, `a[row]` returns a row; `a[row][col]` or `a[row, col]` returns a scalar.
+- You can extract multiple arbitrary elements using:
+      np.array([a[0,0], a[1,1], a[2,1]])
+  or the vectorized form:
+      a[[0,1,2], [0,1,1]]
+
+Boolean Indexing:
+- Conditions like `a > 5` produce a boolean mask.
+- Applying the mask selects only elements where the condition is True:
+      a[a > 5]
+- This feature becomes even more powerful when working with pandas.
+
+Slicing:
+- Works similarly to Python lists for 1D arrays:
+      a[:3], a[2:4]
+- For 2D arrays:
+      a[:2]        → first two rows
+      a[:2, 1:3]   → rows 0–1, columns 1–2
+- First index slice = rows, second = columns.
+
+Views vs Copies:
+- Slices are *views* into the original array, not copies.
+- Modifying a slice modifies the original:
+      sub = a[:2, 1:3]
+      sub[0,0] = 50   → original array changes too
+- Use `copy.deepcopy()` or `a[:2, 1:3].copy()` if you need an independent subarray.
+
+Summary:
+NumPy indexing provides powerful and efficient ways to access, filter, and reshape data, 
+but it’s crucial to remember when operations produce views that share memory with the 
+original array.
+"""

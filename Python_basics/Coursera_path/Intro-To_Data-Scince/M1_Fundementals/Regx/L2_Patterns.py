@@ -38,3 +38,36 @@ print(re.findall("^[^A]",grades))
 # which is not an A. Our string though starts with an A, so there is no match found. And remember when you are
 # using the set operator you are doing character-based matching. So you are matching individual characters in
 # an OR method.
+
+"""
+This code explains how to use regular expression character classes and set operators 
+to match specific groups of characters.
+
+Character Classes:
+- `[AB]` matches either A or B (logical OR for characters).
+- Ranges like `[a-z]` match any lowercase alphabetic character.
+
+Examples:
+- `re.findall("B", grades)` returns all B’s.
+- `re.findall("[AB]", grades)` returns all A’s and B’s.
+- `[A][B-C]` matches an A followed immediately by either B or C.
+- Equivalent pattern using OR: `"AB|AC"`.
+
+Negation in Character Classes:
+- `[^A]` means “any character except A.”
+- Example: `re.findall("[^A]", grades)` returns every grade that is not an A.
+
+Important Detail:
+- The caret `^` changes meaning depending on context:
+    • At the start of a regex (outside brackets), it anchors to the beginning of the string.  
+    • Inside `[]`, it negates the set.
+
+Thus:
+- `re.findall("^[^A]", grades)` means:
+      at the *start* of the string, match any character that is *not* A  
+  Since the string begins with A, no match is found → returns an empty list.
+
+Summary:
+Character classes let you express flexible OR patterns, ranges, and negations—
+essential tools for precise text matching.
+"""

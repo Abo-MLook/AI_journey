@@ -54,3 +54,35 @@ print(re.search("succesful.$",text))
 # as we did earlier. The rendering of the match object also tells you what pattern was matched, in this case
 # the word Amy, and the location the match was in, as the span.
 
+
+"""
+This code introduces Python’s `re` module and demonstrates how regular expressions 
+perform text searching, tokenizing, and pattern matching.
+
+Basic Search Functions:
+- `re.search(pattern, text)` finds the first occurrence of a pattern *anywhere* in the string.
+- `re.match(pattern, text)` checks only the *start* of the string.
+- Example: checking whether a sentence contains the word “good.”
+
+Tokenizing with Regex:
+- `re.split(pattern, text)` separates a string based on the pattern.
+- `re.findall(pattern, text)` returns all matches as a list.
+- Useful for counting, segmenting, and preprocessing text for NLP tasks.
+
+Anchors:
+- `^` anchors the pattern to the start of the string.
+- `$` anchors the pattern to the end.
+- Examples:
+      re.search("^Amy", text)
+      re.search("successful.$", text)
+
+Match Objects:
+- When a match is found, `re.search()` returns a `Match` object.
+- This object evaluates to True in conditionals and stores:
+      • the matched text  
+      • its position (span) in the original string
+
+Summary:
+The `re` module offers flexible tools for searching and manipulating text. Anchors, 
+tokenizing, and match objects form the basis for more advanced pattern recognition.
+"""

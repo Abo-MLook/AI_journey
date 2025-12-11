@@ -26,6 +26,8 @@ print(re.findall("A{1,1}A{1,1}",grades))
 # It's important to note that the regex quantifier syntax does not allow you to deviate from the {m,n}
 # pattern. In particular, if you have an extra space in between the braces you'll get an empty result
 print(re.findall("A{2, 2}",grades))
+print(re.findall("A{2,2}",grades))
+
 
 # And as we have already seen, if we don't include a quantifier then the default is {1,1}
 print(re.findall("AA",grades))
@@ -39,3 +41,29 @@ print(re.findall("A{1,10}B{1,10}C{1,10}",grades))
 
 
 
+"""
+This code demonstrates regex quantifiers, which specify how many times a pattern must 
+repeat to be considered a match.
+
+Quantifier Syntax:
+- `{m,n}` → match at least *m* times and at most *n* times.
+- `{x}`  → match exactly *x* times (shorthand for `{x,x}`).
+
+Examples Using the Grades String:
+- `"A{2,10}"` finds sequences of 2–10 consecutive A’s.
+  → Treats a run of 4 A’s as a *single* match.
+
+- `"A{1,1}A{1,1}"` is equivalent to `"AA"` and matches any pair of consecutive A’s.
+  → A run of 4 A’s contains *two* overlapping pairs.
+
+Important Notes:
+- Spaces inside the quantifier braces make the regex invalid (`"A{2, 2}"` fails).
+- Without a quantifier, the default is exactly one occurrence (`"AA"` → `{1,1}`).
+- Pattern sequences can stack:
+      "A{1,10}B{1,10}C{1,10}"
+  matches any substring containing A’s followed by B’s followed by C’s in that order.
+
+Summary:
+Quantifiers allow regex patterns to recognize repeated characters or sequences, enabling 
+detection of streaks, runs, and ordered trends in text.
+"""

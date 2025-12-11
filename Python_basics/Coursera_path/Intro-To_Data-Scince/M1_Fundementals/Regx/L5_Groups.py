@@ -68,3 +68,45 @@ for item in re.finditer("(?P<title>[\w ]+)(?=\[edit\])",wiki):
     # of whitespace or regular word characters, the second will be the characters [edit] but we don't actually
     # want this edit put in our output match objects
     print(item)
+
+
+"""
+This code demonstrates advanced regex techniques: grouping, named groups, iterators, and 
+lookahead matching—applied to extracting Wikipedia section titles.
+
+Grouping with Parentheses:
+- A regex can capture multiple subpatterns using parentheses.
+- Example:
+      "([\\w ]*)(\\[edit\\])"
+  returns tuples: (title, "[edit]").
+
+`finditer()`:
+- Unlike `findall()`, which returns strings/tuples, `finditer()` yields full Match objects.
+- Match objects provide:
+      • `.group(n)` → retrieve a specific group  
+      • `.groups()` → all groups as a tuple  
+      • `.groupdict()` → groups by name if named groups are used
+
+Named Groups:
+- Syntax: `(?P<name>pattern)`
+- Example:
+      (?P<title>[\\w ]*)(?P<edit_link>\\[edit\\])
+  allows retrieving matches as a dictionary for clarity.
+
+Lookahead:
+- Syntax: `(?=...)`
+- Matches a pattern *only if* it is followed by another pattern, but does not consume it.
+- Example:
+      (?P<title>[\\w ]+)(?=\\[edit\\])
+  matches the title text that *precedes* “[edit]” without capturing “[edit]” itself.
+
+Shortcuts and Metacharacters:
+- `\\w` for word characters
+- `\\d` for digits
+- `\\s` for whitespace
+- `.` for any non-newline character
+
+Summary:
+These tools—grouping, named groups, `finditer`, and lookaheads—make regex expressive and 
+powerful for extracting structured information from messy text.
+"""
