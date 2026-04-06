@@ -3,18 +3,19 @@ class BalanceException(Exception):
 
 
 class BankAccount:
-    def __init__(self,initValue,accName):
+    def __init__(self, initValue, accName):
         self.balance = initValue
         self.name = accName
         print(f"Account {accName} has bean created")
 
-    def valid_Transection(self,value):
-        if self.balance >= value :
+    def valid_Transection(self, value):
+        if self.balance >= value:
             return
         else:
-            raise BalanceException(f"sorry the account has only balance of ${self.balance}")
+            raise BalanceException(
+                f"sorry the account has only balance of ${self.balance}")
 
-    def withdraw(self,value):
+    def withdraw(self, value):
 
         try:
             self.valid_Transection(value)
@@ -22,10 +23,9 @@ class BankAccount:
             print(f"You successfully withdraw ${value}")
             self.getBalance()
         except BalanceException as error:
-            print(f"withdraw is intrupted error  : {error} ")
+            print(f"withdraw is intrupted    error : {error} ")
 
-
-    def deposit(self,value):
+    def deposit(self, value):
         self.balance += value
         print(f"You successfully deposit ${value} ✅")
         self.getBalance()
@@ -37,43 +37,42 @@ class BankAccount:
         print(f"Account Name : '{self.name}'")
 
     def getNameOnly(self):
-       return self.name
+        return self.name
 
     def getAll(self):
         self.getName()
         self.getBalance()
 
-    def transfareTo(self,value,account):
+    def transfareTo(self, value, account):
         print(f"'{self.name}' ,you received ${value} from {account.getNameOnly()}")
         self.balance += value
 
-
-    def transfareFrom(self,value ,account):
+    def transfareFrom(self, value, account):
         try:
             print("\n**** Being Transfer ...... 💸💸💸💸\n")
             self.valid_Transection(value)
             self.balance -= value
-            print(f"{self.name} ,you successfully transfered  ${value} to {account.getNameOnly()}   ✅💵")
-            account.transfareTo(value,self)
+            print(
+                f"{self.name} ,you successfully transfered  ${value} to {account.getNameOnly()}   ✅💵")
+            account.transfareTo(value, self)
 
         except BalanceException as error:
             print(f"Transefare being inturrepted  : {error} 🚫")
 
 
-
 class RewardsAccount(BankAccount):
-    def deposit(self,value):
-        self.balance +=  (value * 1.05)
+    def deposit(self, value):
+        self.balance += (value * 1.05)
         print(f"You successfully deposit ${value}")
         self.getBalance()
 
 
 class SavingAccount(RewardsAccount):
-    def __init__(self,initValue,accName):
-        super().__init__(initValue,accName)
+    def __init__(self, initValue, accName):
+        super().__init__(initValue, accName)
         self.fee = 5
 
-    def withdraw(self,value):
+    def withdraw(self, value):
         try:
             self.valid_Transection(value + self.fee)
             self.balance -= (value + self.fee)
@@ -81,9 +80,3 @@ class SavingAccount(RewardsAccount):
             self.getBalance()
         except BalanceException as error:
             print(f"withdraw had been inturrepted  : {error}🚫")
-
-
-
-
-
-

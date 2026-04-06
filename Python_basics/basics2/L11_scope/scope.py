@@ -2,6 +2,7 @@
 name = "Dave"
 count = 1
 
+
 def another():
     color = "blue"
     # count +=1  this will create new var but there is not value to it to add , so error
@@ -10,10 +11,13 @@ def another():
     print(count)
 
     def greeting(name):
-        #color = "white" this will create new var with white , not modify the original one
-        nonlocal color # this will modify it
+        # color = "white" this will create new var with white , not modify the original one
+        nonlocal color  # this will modify it
         color = "red"
         print(color)
         print(name)
 
     greeting("Dave")
+
+
+another()
