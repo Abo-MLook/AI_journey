@@ -6,8 +6,9 @@ b = a
 print(b is a)
 
 name = "mrwan alayed"
+print(name.capitalize())
 print(name[1:3])
-g
+
 print(name.split())
 s = name.split()
 print(" ".join(s))
