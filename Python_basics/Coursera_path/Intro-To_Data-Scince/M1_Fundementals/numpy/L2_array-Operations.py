@@ -57,8 +57,10 @@ print()
 print(A*B)
 print()
 # if we want to do matrix product, we use the "@" sign or use the dot function
+print("asdsadadsadadada")
 print(A@B)
 print()
+print(np.dot(A,B))
 
 
 # You don't have to worry about complex matrix operations for this course, but it's important to know that
