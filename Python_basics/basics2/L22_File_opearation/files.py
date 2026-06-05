@@ -13,17 +13,17 @@ print(f.read())  # print all file
 # print(f.read()) This will not print anything, The file already read and it is in end of file now
 
 # print(f.read(4)) will print the first 4 letters
-print("\n=======================\n")
+print("\n=======================1\n")
 
 print(f.readlines())  # print line
 # print(f.readlines()) print the second line
-print("\n=======================\n")
+print("\n=======================2\n")
 
 for line in f:
     print(line)
 
 f.close()
-print("\n=======================\n")
+print("\n=======================3\n")
 
 # Nice structure for opening a file:
 try:
@@ -36,28 +36,28 @@ except:
 finally:
     f.close()
 
-print("\n=======================\n")
+print("\n=======================4\n")
 # =======================
 
 # a = Append : create the file if it doesn't exist , like adding in file
 f = open("names.txt", "a")
 f.write("\nTurky")
 f.close()
-print("\n=======================\n")
+print("\n=======================5\n")
 
 f = open("names.txt")
 print(f.read())
 f.close()
-print("\n=======================\n")
+print("\n=======================6\n")
 
 # other good method :
 f = open("names.txt", "a+")  # a+ append and read
-f.write("Sabhan")
+f.write(" Sabhan33")
 f.seek(0)  # go back to the beginning of the file
 print(f.read())
 f.close()
 
-print("\n=======================\n")
+print("\n=======================7\n")
 # =======================
 
 # W = Write : used to 'Overwrite'
@@ -68,7 +68,7 @@ f.seek(0)
 print(f.read())
 f.close()
 
-print("\n=======================\n")
+print("\n=======================8\n")
 # =======================
 
 # Wwo ways to create a new file
@@ -76,7 +76,7 @@ print("\n=======================\n")
 f = open("Student_list", "w")  # will create new one or read a file exist
 f.close()
 
-print("\n=======================\n")
+print("\n=======================9\n")
 
 # 2-  'Creates' a file if doesn't exist , if it exists will generate error
 # using   # x = Create
@@ -91,7 +91,7 @@ if os.path.exists("Def_names.txt"):
 else:
     print("The file you wish to delete does not exist")
 
-print("\n=======================\n")
+print("\n=======================11\n")
 # =======================
 
 # meathod better then try and also example for coping file

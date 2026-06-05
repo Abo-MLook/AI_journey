@@ -11,7 +11,7 @@ while True:
     try:
         num = float(num)
         sum += num
-    except ValueError:
+    except :
         print("error enter numbers only")
 print(f"The sum is : {sum:.2f}")
 
